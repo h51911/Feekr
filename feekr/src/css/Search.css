@@ -1,0 +1,10 @@
+.top-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-search input {
+  width: 9.253333rem;
+  height: 4.506667rem;
+}
