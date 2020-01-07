@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 
-class Cart extends Component{
+class Huwai extends Component{
     render(){
         return <div>
-            Cart
+            Huwai
         </div>
     }
 }
 
-export default Cart;
+export default Huwai;
