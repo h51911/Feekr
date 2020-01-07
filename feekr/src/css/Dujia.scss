@@ -1,12 +1,194 @@
-.slick-slide {
-    text-align: center;
-    height: 160px;
-    line-height: 160px;
-    // background: #364d79;
-    overflow: hidden;
+.Dujia{
+    width: 100%;
+    margin: 0 auto;
+    background: #f6f6f6;
+    font-family: PingFangSC-Regular,Source Han Sans,Helvetica,Droid Sans,Arial,sans-serif;
+    .search-nav {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        position: relative;
+        top: -0.345rem;
+        padding-bottom: 1.38rem;
+        background-color: #fff;
+    
+        .nav-detail {
+            width: 25%;
+            margin-top: 1.38rem;
+        }
+    
+        .nav-icon {
+            display: block;
+            margin: 0 auto .61875rem;
+            width: 2.75rem;
+        }
+    
+        .type {
+            text-align: center;
+            font-size: .828rem;
+        }
+    }
+    
+    .home-common-base {
+        margin-top: .69rem;
+        padding-left: 3%;
+        padding-right: 3%;
+        background-color: #fff;
+    
+        .common-search-entry {
+            padding-bottom: .345rem;
+            overflow: hidden;
+            background-color: #fff;
+    
+            .common-search-entry-header {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                margin-top: 1.5525rem;
+                margin-bottom: 2.2425rem;
+                height: .89625rem;
+    
+                .common-search-entry-header-name {
+                    font-size: .966rem;
+                    padding-right: .69rem;
+                }
+    
+                .common-search-entry-header-line {
+                    height: 1px;
+                    flex-grow: 1;
+                    background-color: #e8e8e8;
+                }
 
-    h3 {
-        color: #fff;
+                .common-search-entry-header-more {
+                    font-size: .828rem;
+                    padding-left: .69rem;
+                    color: rgb(26, 188, 156);
+                }
+            }
+
+            .common-search-entry-nav {
+                display: flex;
+
+                a{
+                    color: inherit;
+                }
+
+                .common-search-entry-item {
+                    width: 32%;
+                    margin-right: 2%;
+                    text-align: center;
+                    font-size: .69rem;
+                    line-height: 1.725rem;
+
+                    .common-goods-img {
+                        width: 100%;
+                        vertical-align: middle;
+                        height: auto;
+                    }
+
+                    .common-goods-content {
+                        font-weight: normal;
+                        margin-top: .414rem;
+                        font-size: .8073rem;
+                    }
+
+                    .one-line-ellipsis {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .common-goods-price {
+                        font-size: .759rem;
+                        line-height: 1.125rem;
+                        color: rgb(26, 188, 156);
+
+                        .common-goods-num {
+                            font-size: .897rem;
+                            font-weight: bold;
+                        }
+                        .common-goods-unit {
+                            font-family: PingFangSC;
+
+                            .common-goods-bold {
+                                font-family: "PingFangSC-Medium";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .home-hot {
+        padding-bottom: 1.035rem;
+    }
+
+    .theme-entry{
+        .common-header {
+            display: flex;
+            align-items: center;
+            padding-top: 1.255rem;
+            height: 1.255rem;
+            line-height: 1.255rem;
+
+            .commonent-header-line {
+                width: .275375rem;
+                height: 65%;
+                margin-right: .69rem;
+                background-color: rgb(26, 188, 156);
+            }
+
+            .commonent-header-type {
+                font-size: 1.035rem;
+            }
+
+            .commonent-header-add {
+                text-indent: .69rem;
+                font-size: .828rem;
+                color: #999;
+            }
+        }
+
+        ul{
+            .theme-entry-item {
+                margin-top: 1.5525rem;
+                overflow-x: hidden;
+                border-bottom: .5px solid #e8e8e8;
+
+                a{
+                    color: inherit;
+                }
+
+                .theme-entry-link {
+                    width: 100%;
+                    margin-top: 1.311rem;
+
+                    .theme-entry-img {
+                        width: 100%;
+                        height: 155.6px;
+                        vertical-align: top;
+                    }
+
+                    .theme-entry-content {
+                        margin-top: .621rem;
+                        margin-bottom: 1.311rem;
+                        text-indent: .69rem;
+                        font-size: .897rem;
+                        line-height: 1.375rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .story-entry{
+        .common-header {
+            display: flex;
+            align-items: center;
+            padding-top: 1.255rem;
+            height: 1.255rem;
+            line-height: 1.255rem;
+        }
     }
 }
-  
