@@ -9,23 +9,42 @@ class Search extends Component {
         super();
         // this.gotoSearch=this.gotoSearch.bind(this)
         this.state = {
-            percent: 100
+            percent: 100,
+            display: 'none'
         }
     }
-    // gotoSearch(){
-    //     console.log(11)
+
+    // componentDidUpdate(){
+    //     // console.log(2)
+    //     if(this.state.percent==100){
+    //         console.log(111)
+    //     }
     // }
     increase = () => {
-        const percent = this.state.percent + 100;
+        // console.log(1)
         this.setState({
-            percent: percent > 100 ? 100 : percent,
+            percent: 100,
+
         })
+        // console.log(this.state.percent)
+        setTimeout(() => {
+            this.setState({
+                display: 'none'
+            })
+        }, 500);
     }
     decrease = () => {
-        const percent = this.state.percent - 100;
+        // console.log(2)
         this.setState({
-            percent: percent < 0 ? 0 : percent,
+            display: 'block',
+
+
         })
+        setTimeout(() => {
+            this.setState({
+                percent: 0,
+            })
+        }, 1);
     }
 
 
@@ -34,7 +53,7 @@ class Search extends Component {
 
             <div className="top-search">
                 <input type="text" onClick={this.decrease} className="sea1" placeholder="搜索目的地/攻略/旅行资讯" />
-                <div className="box" style={{ left: `${this.state.percent}%` }}>
+                <div className="box" style={{ left: `${this.state.percent}%`, display: this.state.display }}>
                     <div className="top">
                         <div onClick={this.increase} className="table-cell iconfont icon-fanhui txt-left back-to-guide"></div>
                         <input type="text" className="sea2" placeholder="搜索目的地/攻略/旅行资讯" />
