@@ -33,13 +33,38 @@ html, body {
   position: relative;
 }
 
+.top-search .box .top .table-cell:nth-child(1) {
+  width: 12%;
+  color: #ccc;
+  font-size: 2rem;
+}
+
+.top-search .box .top .table-cell:nth-child(1) ::before {
+  content: '\e627';
+}
+
+.top-search .box .top .right {
+  float: right;
+  margin-right: .3125rem;
+}
+
+.top-search .box .top .right a {
+  background: #1abc9c;
+  color: #fff;
+  padding: .3125rem .5rem;
+  border-radius: .375rem;
+  font-size: .75rem;
+}
+
 .top-search .box .top .sea2 {
+  text-indent: .925rem;
   background-color: #F6F6F6;
-  width: 80%;
-  height: 2.4125rem;
-  border-radius: .625rem;
+  width: 72%;
+  height: 2.025rem;
+  border-radius: .9375rem;
   border: .0625rem solid #E8E8E8;
   font-size: .75rem;
+  margin-right: .625rem;
 }
 
 .top-search .sea1 {

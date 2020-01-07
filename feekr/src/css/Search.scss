@@ -33,13 +33,35 @@ html,body{
             padding: .6875rem;
             // background: #F6F6F6;
             position: relative;
+            .table-cell:nth-child(1){
+                width: 12%;
+                color: #ccc;
+                font-size: 2rem;
+                ::before{
+                    content: '\e627';
+                }
+            }
+            .right{
+                float: right;
+                // display: inline-block;
+                margin-right: .3125rem;
+                a{
+                    background: #1abc9c;
+                    color: #fff;
+                    padding: .3125rem .5rem;
+                    border-radius: .375rem;
+                    font-size: .75rem;
+                }
+            }
             .sea2{
+                text-indent:.925rem;
                 background-color: #F6F6F6;
-                width: 80%;
-                height: 2.4125rem;
-                border-radius: .625rem;
+                width: 72%;
+                height: 2.025rem;
+                border-radius: .9375rem;
                 border: .0625rem solid #E8E8E8;
                 font-size: .75rem;
+                margin-right: .625rem;
                 // text-align: center;
             }
         }
