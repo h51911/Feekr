@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 
-class Reg extends Component{
+class Dujia extends Component{
     render(){
         return <div>
-            Reg
+            Dujia
         </div>
     }
 }
 
-export default Reg;
+export default Dujia;
