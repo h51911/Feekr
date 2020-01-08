@@ -9,6 +9,7 @@ import Zixun from '../api/Zixun';
 import Dangjiyouhui from '../api/Dangjiyouhui';
 import Mudidi from '../api/Mudidi.js';
 import Selected from '../api/Selected.js';
+
 class App extends Component {
     constructor(props) {
         super(props)
@@ -232,7 +233,7 @@ class App extends Component {
                             })
                         }
                       
-                      <a className="get-more font-md txt-center" href="/column/news">更多栏目推荐</a>
+                      <a className="get-more bota font-md txt-center" href="/column/news">更多栏目推荐</a>
                 </section>
             </div>
 

@@ -175,7 +175,6 @@
 .main .product-container .sales-in-wrap {
   border-bottom: none;
   padding: .875rem .6875rem;
-  height: 11.6875rem;
 }
 
 .main .product-container .sales-in-wrap .product-item {
@@ -309,6 +308,10 @@
   margin-top: .5rem;
   color: #999;
   white-space: pre-line;
+}
+
+.main .bota {
+  margin-bottom: 3.125rem;
 }
 
 .main .selected-item + .selected-item {
