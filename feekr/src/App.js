@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter ,Redirect} from 'react-router-dom'
 import Home from './pages/Home'
 import Gonglve from './pages/Gonglve'
 import Dujia from './pages/Dujia'
