@@ -228,6 +228,28 @@ class Dujia extends Component {
                     </li>
                 </ul>
             </div>
+            <div className="like">
+                <div className="maybe-like home-common-base">
+                    <div className="common-header">
+                        <span className="commonent-header-line"></span>
+                        <span className="commonent-header-type">猜你喜欢</span>
+                        <span className="commonent-header-add">这些也许是你喜欢的</span>
+                    </div>
+                    <div className="maybe-like-box">
+                        <a href="###" className="common-goods maybe-like-item">
+                            <img src="https://p-product-pic.feekr.com/2019/1128/518153f4.jpg!400X250"
+                                className="common-goods-img lazyloaded" />
+                            <h3 className="common-goods-content one-line-ellipsis">周末不涨价！金华巨龙温泉旅游度假村|独享温泉度假养生</h3>
+                            <p className="common-goods-price">
+                                <span className="common-goods-num">¥599&nbsp;</span>起
+                                <span className="common-goods-unit">
+                                    <span className="common-goods-bold">/</span>晚
+                                </span>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     }
 }
