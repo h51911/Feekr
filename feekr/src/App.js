@@ -12,7 +12,7 @@ import Reg from './pages/Reg'
 import Forget from './pages/Forget'
 import User from './pages/User'
 import Exit from './pages/Exit'
-
+// import './utils/rem'
 import Morenews from './pages/Morenews'
 class App extends Component {
     render() {
