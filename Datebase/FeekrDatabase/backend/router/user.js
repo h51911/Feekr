@@ -34,6 +34,7 @@ Router.post('/reg', async (req, res) => {
             res.send(formatdata());
         } else {
             //插入失败
+
             res.send(formatdata({ code: 0 }));
         }
     } else {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, withRouter ,Redirect} from 'react-router-dom'
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
 import Home from './pages/Home'
 import Gonglve from './pages/Gonglve'
 import Dujia from './pages/Dujia'
@@ -12,7 +12,7 @@ import Reg from './pages/Reg'
 import Forget from './pages/Forget'
 import User from './pages/User'
 import Exit from './pages/Exit'
-// import './utils/rem'
+import 'antd/dist/antd.css'
 import Morenews from './pages/Morenews'
 class App extends Component {
     render() {
@@ -28,7 +28,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/meiwu" component={Meiwu} />
                 <Route path="/reg" component={Reg} />
-                <Route path="/user" component={User} />
+                <Route path="/user/:id" component={User} />
                 <Route path="/exit" component={Exit} />
                 <Route path="/forget" component={Forget} />
                 <Route path="/yanjiusuo" component={Home} />
