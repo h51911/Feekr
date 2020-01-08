@@ -4,6 +4,8 @@ import Search from '../components/search';
 
 import { Carousel } from 'antd';
 
+import '../utils/base.css'
+import '../utils/icon.css'
 import '../css/Dujia.css';
 
 import Like from '../api/Like';
@@ -67,14 +69,30 @@ class Dujia extends Component {
         })
         // console.log(res);
 
+        let res2 = await Like.get({
+            page: 2,
+            shopid: 'FK',
+        })
+        // console.log(res2);
+
+        let res3 = await Like.get({
+            page: 3,
+            shopid: 'FK',
+        })
+        // console.log(res3);
+
         let data = res.data.result.list;
+        let data2 = res2.data.result.list;
+        let data3 = res3.data.result.list;
+        let alldata = data.concat(data2, data3);
         // console.log(data);
 
         this.setState({
-            num: data,
+            num: alldata,
         })
-        console.log(this.state);
+        // console.log(this.state);
     }
+
     render() {
         let { navlist, num } = this.state;
         return <div className="Dujia">
