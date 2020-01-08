@@ -9,11 +9,12 @@
     .global-alert {
         position: fixed;
         top: 50%;
-        left: 30%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
         z-index: 10001;
         max-width: 80%;
-        // visibility: hidden;  
-        visibility: visible;
+        visibility: hidden;
+        // visibility: visible;
 
         .alert-content {
             border-radius: vw(10);
@@ -28,7 +29,7 @@
             line-height: 1.4;
         }
 
-        .alert-show {
+        .alert-shows {
             transform: scale(1);
             opacity: 1;
         }

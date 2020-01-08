@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Gonglve extends Component {
 
     render() {
         return <div>
@@ -9,4 +9,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Gonglve;

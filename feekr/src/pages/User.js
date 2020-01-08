@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import '../css/User.scss'
 class User extends Component {
+    state={
+        text:''
+    }
+    
+    componentDidMount(){
+        console.log(this.props.match.params.id)
+        this.setState({
+            text:this.props.match.params.id
+        })
+    }
     render() {
         return <div className='myuser'>
            <div className="inner-wrap">
@@ -14,7 +24,7 @@ class User extends Component {
                 
             </div>
             <div className="table-cell txt-left">
-                <p className="nickname">hello123</p>
+    <p className="nickname">{this.state.text}</p>
                 
             </div>
             <div className="table-cell iconfont icon-right-jiantou"></div>
