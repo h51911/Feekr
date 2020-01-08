@@ -1,9 +1,10 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
-class Login extends Component{
-    render(){
+class Login extends Component {
+
+    render() {
         return <div>
-            Login
+            攻略
         </div>
     }
 }

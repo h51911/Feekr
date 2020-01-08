@@ -1,0 +1,123 @@
+@function vw($px) {
+    @return ($px/375) * 100vw;
+}
+
+.boxs {
+    background-color: #f6f6f6;
+    height: vw(667);
+
+    .global-alert {
+        position: fixed;
+        top: 50%;
+        left: 30%;
+        z-index: 10001;
+        max-width: 80%;
+        // visibility: hidden;  
+        visibility: visible;
+
+        .alert-content {
+            border-radius: vw(10);
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: vw(20);
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all .3s;
+            color: #fff;
+            font-size: vw(16);
+            line-height: 1.4;
+        }
+
+        .alert-show {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .alert-show {
+        visibility: visible;
+    }
+
+    .register-wrap {
+        width: 100%;
+        overflow: hidden;
+
+        .back-title {
+            text-align: center;
+            position: relative;
+            padding: vw(10);
+            font-size: vw(17);
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+
+            a {
+
+                position: absolute;
+                left: vw(10);
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                color: #ccc;
+                font-size: vw(32);
+
+            }
+        }
+    }
+
+    .body-space-large {
+        padding: vw(25);
+
+        form {
+            .input-wrap {
+                padding: vw(6) vw(20);
+                background: #fff;
+                font-size: vw(12);
+                margin-bottom: vw(15);
+            }
+
+            span {
+                color: #999;
+                font-size: vw(20);
+                vertical-align: middle;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            .reg-input {
+                width: 85%;
+                padding: vw(10) 0;
+                font-size: vw(14);
+                margin-left: vw(10);
+            }
+
+            .submit-btn {
+                display: block;
+                padding-top: vw(14);
+                padding-bottom: vw(14);
+                color: #fff;
+                font-size: vw(16);
+                background: #1abc9c;
+                width: 100%;
+                text-align: center;
+                padding: vw(10) 0;
+                font-size: vw(14);
+                width: 100%;
+                border-radius: 3px;
+                margin-top: vw(20);
+            }
+        }
+
+        .info {
+            padding-top: vw(20);
+            font-size: vw(12);
+            text-align: center;
+            color: #666;
+
+            .normal {
+                color: #1abc9c;
+            }
+        }
+    }
+}

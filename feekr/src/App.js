@@ -6,9 +6,17 @@ import Dujia from './pages/Dujia'
 // import Search from './components/search'
 import Meiwu from './pages/Meiwu'
 import Huwai from './pages/Huwai'
+import Nav from './commom/Nav'
+import Login from './pages/Login'
+import Reg from './pages/Reg'
+import Forget from './pages/Forget'
+import User from './pages/User'
+import Exit from './pages/Exit'
 
 class App extends Component {
     render() {
+        // console.log('app', this.props)
+
         return <div>
             <Switch>
                 <Route path="/gonglve" component={Gonglve} />
@@ -16,10 +24,17 @@ class App extends Component {
 
                 <Route path="/dujia" component={Dujia} />
                 <Route path="/huwai" component={Huwai} />
+                <Route path="/login" component={Login} />
                 <Route path="/meiwu" component={Meiwu} />
+                <Route path="/reg" component={Reg} />
+                <Route path="/user" component={User} />
+                <Route path="/exit" component={Exit} />
+                <Route path="/forget" component={Forget} />
                 <Route path="/yanjiusuo" component={Home} />
-                <Route path="/" component={Home} />
+                <Route path="/home" component={Home} />
+                <Redirect from="/" to="/home" exact />
             </Switch>
+            <Nav path={this.props.location.pathname} />
         </div>
     }
 }

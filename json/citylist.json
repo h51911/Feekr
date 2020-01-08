@@ -1,0 +1,246 @@
+{
+    "statusCode": 200,
+    "result": {
+        "list": [
+            {
+                "area": "山东",
+                "desc": "孔子故里、齐鲁圣地",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 6070,
+                        "name": "青岛",
+                        "cover": "https://scenic01.feekr.com/2014/10/07/2047010d67d469436a5f28e50f2ddf16a85b3b.jpg"
+                    },
+                    {
+                        "id": 6075,
+                        "name": "烟台",
+                        "cover": "https://scenic01.feekr.com/2013/03/01/1041290834947d6c2163d75e359043ed648f53.jpg"
+                    },
+                    {
+                        "id": 6076,
+                        "name": "威海",
+                        "cover": "https://scenic01.feekr.com/2013/03/01/104128cc281096567169782827b844bb46353d.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "浙江",
+                "desc": "山水江南、鱼米之乡",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 4110,
+                        "name": "宁波",
+                        "cover": "https://scenic01.feekr.com/2014/11/12/222125e9d22b0b853b5d4a0009f897e6a1d25e.jpg"
+                    },
+                    {
+                        "id": 4103,
+                        "name": "乌镇",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/084011e2d18955fda41102d884655362150b18.jpg"
+                    },
+                    {
+                        "id": 4108,
+                        "name": "绍兴",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/084027ea4afb8e7132f9332e7206b00327ec91.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "江苏",
+                "desc": "玩过这些地方，才算来过江苏",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 4307,
+                        "name": "南京",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/0925473099d44a2278252b9384e57c6535482c.jpg"
+                    },
+                    {
+                        "id": 4317,
+                        "name": "常州",
+                        "cover": "https://scenic01.feekr.com/2014/10/23/0015412dd7d5849424117e29d9cd099eb4d539.jpg"
+                    },
+                    {
+                        "id": 4309,
+                        "name": "无锡",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/09255311eb307ef261942d2d5753f6b2e31e07.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "云南",
+                "desc": "鲜为人知的云南，每一处都让你念念不忘",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 7007,
+                        "name": "大理",
+                        "cover": "https://scenic01.feekr.com/2014/07/18/014658aa65704b7b1494e07aecf37c5f6193fc.jpg"
+                    },
+                    {
+                        "id": 7003,
+                        "name": "昆明",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/111954b5b47a8e91419b56d3e7988b0d0b349d.jpg"
+                    },
+                    {
+                        "id": 7004,
+                        "name": "丽江",
+                        "cover": "https://scenic01.feekr.com/2017/01/12/094759a8547af301cdb4a8f271c93b44deac72.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "川渝",
+                "desc": "火锅冰粉、钟灵毓秀",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 4359,
+                        "name": "成都",
+                        "cover": "https://scenic01.feekr.com/2014/07/05/103552953f4f36cf6632c837189be30e84f8cc.jpg"
+                    },
+                    {
+                        "id": 4447,
+                        "name": "甘孜",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/093319749c28af790f27f62db6da66973b2eb0.jpg"
+                    },
+                    {
+                        "id": 6169,
+                        "name": "重庆",
+                        "cover": "https://scenic01.feekr.com/2017/01/15/145405d9c851f1553d7621f88263dd21d5922f.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "台湾",
+                "desc": "小吃夜市、海上明珠",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 7388,
+                        "name": "台北",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/1134474808f246d1afb66a40d3d3fb7080d3a4.jpg"
+                    },
+                    {
+                        "id": 47093,
+                        "name": "垦丁",
+                        "cover": "https://scenic01.feekr.com/2015/06/15/20054231fe8513dbb350d38d8a358f720bddb5.jpeg"
+                    },
+                    {
+                        "id": 7391,
+                        "name": "花莲",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/1134549ceefad065222da138d1482571c42e4c.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "广东",
+                "desc": "小蛮腰、客家文化",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 6425,
+                        "name": "广州",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/105646042c771d4edc5349ea0270f2c15d572a.jpg"
+                    },
+                    {
+                        "id": 6428,
+                        "name": "深圳",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/10565128e5a64e32c15d376ec8043dd4946ab1.jpg"
+                    },
+                    {
+                        "id": 6435,
+                        "name": "佛山",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/1057083be451bceadbde15e1cb3d87969bf646.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "西北",
+                "desc": "戈壁高原,沙漠绿洲",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 6970,
+                        "name": "西安",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/11181546b8504baf19cad7704f45d864e2970c.jpg"
+                    },
+                    {
+                        "id": 6556,
+                        "name": "乌鲁木齐",
+                        "cover": "https://scenic01.feekr.com/2014/08/04/20262447a760cd3f81d3ac3d92f0924b71cd03.jpg"
+                    },
+                    {
+                        "id": 6258,
+                        "name": "西宁",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/1049566fa041561633187197f37ae8f11b886a.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "东北",
+                "desc": "烤串儿",
+                "layout": 3,
+                "city": [
+                    {
+                        "id": 5293,
+                        "name": "大连",
+                        "cover": "https://scenic01.feekr.com/2013/12/18/1015417f599a80107965cac7f179dffd2b20c1.jpg"
+                    },
+                    {
+                        "id": 5294,
+                        "name": "沈阳",
+                        "cover": "https://scenic01.feekr.com/2014/07/13/1539331a053b0cbbca272fecafeab1cbb10de9.jpg"
+                    },
+                    {
+                        "id": 5633,
+                        "name": "哈尔滨",
+                        "cover": "https://scenic01.feekr.com/2017/01/13/040313e08d2826db40fc9c6650353bad0fcb31.jpg"
+                    }
+                ]
+            },
+            {
+                "area": "国内其他",
+                "desc": "这里的山水人文，独好",
+                "layout": 6,
+                "city": [
+                    {
+                        "id": 6318,
+                        "name": "三亚",
+                        "cover": "https://scenic01.feekr.com/2018/04/03/07121624e14ed681e6ea20f7f185a09dacb571.png"
+                    },
+                    {
+                        "id": 6925,
+                        "name": "香港",
+                        "cover": "https://scenic01.feekr.com/2013/07/19/090313c9e37e89ad2764bcc444a2f20ad14d9b.jpg"
+                    },
+                    {
+                        "id": 6426,
+                        "name": "澳门",
+                        "cover": "https://scenic01.feekr.com/2017/01/12/08322600f019770f472c7934f3c9b0b266c2eb.jpg"
+                    },
+                    {
+                        "id": 4195,
+                        "name": "武汉",
+                        "cover": "https://scenic01.feekr.com/2014/07/20/18141095e8b3ddc8725c47a50a9d9e6e13bfa3.jpg"
+                    },
+                    {
+                        "id": 8749,
+                        "name": "天津",
+                        "cover": "https://scenic01.feekr.com/2013/08/02/155156a83ff9ed5b247f24c3401dd5f2bc80ae.jpg"
+                    },
+                    {
+                        "id": 4308,
+                        "name": "苏州",
+                        "cover": "https://scenic01.feekr.com/2014/12/05/0107061c3bc65579ac5faf8fea9fe9380954a1.jpg"
+                    }
+                ]
+            }
+        ]
+    },
+    "errorCode": {
+        "code": 100,
+        "message": ""
+    }
+}

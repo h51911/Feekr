@@ -1,0 +1,51 @@
+{
+    "statusCode": 200,
+    "result": {
+        "list": [
+            {
+                "cityName": "杭州",
+                "url": "",
+                "desc": "西湖之春，杭城风光正好",
+                "cover": "https://scenic01.feekr.com/2018/04/03/070651298244203be966840030a543b6860690.png",
+                "scenic": 4102,
+                "fxb": 190
+            },
+            {
+                "cityName": "台北",
+                "url": "",
+                "desc": "我來到你的城市，然後就不想走了。",
+                "cover": "https://scenic01.feekr.com/2017/04/11/034525d02c4193b99132efc09e2b2f838d84f0.jpg",
+                "scenic": 7388,
+                "fxb": 32
+            },
+            {
+                "cityName": "重庆",
+                "url": "",
+                "desc": "没有一顿火锅不能解决的事！",
+                "cover": "https://scenic01.feekr.com/2017/01/13/033915146b670e9e87e0f783e21f4eb103d619.jpg",
+                "scenic": 6169,
+                "fxb": 31
+            },
+            {
+                "cityName": "拉萨",
+                "url": "",
+                "desc": "夏天了，才更应该去西藏！",
+                "cover": "https://scenic01.feekr.com/2017/01/13/03435262e98f24e80547980e2b3c072e3997bb.jpeg",
+                "scenic": 5890,
+                "fxb": 7
+            },
+            {
+                "cityName": "厦门",
+                "url": "",
+                "desc": "被深蓝的海水点燃",
+                "cover": "https://scenic01.feekr.com/2017/01/13/0337425d725b39f2129036a3b8ba3b8464f340.jpg",
+                "scenic": 5751,
+                "fxb": 37
+            }
+        ]
+    },
+    "errorCode": {
+        "code": 100,
+        "message": ""
+    }
+}

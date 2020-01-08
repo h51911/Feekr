@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom'
 
 import Search from '../components/search'
@@ -15,34 +15,34 @@ class App extends Component {
                     path: '/gonglve',
                     text: '攻略',
                     icon: 'icon-gonglve',
-                    color:'#FCBC00'
+                    color: '#FCBC00'
                 }, {
                     name: 'dujia',
                     path: '/dujia',
                     text: '度假',
                     icon: 'icon-dujia',
-                    color:'#51A5DC'
+                    color: '#51A5DC'
                 }, {
                     name: 'huwai',
                     path: '/huwai',
                     text: '玩乐',
                     icon: 'icon-huwai',
-                    color:'#F15A62'
-                },{
+                    color: '#F15A62'
+                }, {
                     name: 'meiwu',
                     path: '/meiwu',
                     text: '美物',
                     icon: 'icon-meiwu',
-                    color:'#A5CE00'
-                },{
+                    color: '#A5CE00'
+                }, {
                     name: 'yanjiusuo',
                     path: '/yanjiusuo',
                     text: '研究所',
                     icon: 'icon-yanjiusuo',
-                    color:'#00AC59'
+                    color: '#00AC59'
                 }
             ],
-          
+
         }
         this.changeMenu = this.changeMenu.bind(this)
     }
@@ -57,21 +57,21 @@ class App extends Component {
     render() {
         let { menu } = this.state
         return <div>
-            <Search/>
-            <section className="nav-container"> 
-                <div className="flex-wrap"> 
-                {
-                     menu.map(item => {
-                        return <a  onClick={this.changeMenu.bind(this,item.path)} key={item.path} className="flex-item txt-center"> 
-                        <p className={`"iconfont ${item.icon}"`} style={{color:`"${item.color}"`}}></p>
-                     <p className="font-sm">{item.text}</p>
-                    </a>  
-                    })
-                } 
-                    
-                 </div> 
+            <Search />
+            <section className="nav-container">
+                <div className="flex-wrap">
+                    {
+                        menu.map(item => {
+                            return <a onClick={this.changeMenu.bind(this, item.path)} key={item.path} className="flex-item txt-center">
+                                <p className={`"iconfont ${item.icon}"`} style={{ color: `"${item.color}"` }}></p>
+                                <p className="font-sm">{item.text}</p>
+                            </a>
+                        })
+                    }
+
+                </div>
             </section>
-          
+
         </div>
     }
 }

@@ -1,0 +1,114 @@
+.boxs {
+  background-color: #f6f6f6;
+  height: 177.86667vw;
+}
+
+.boxs .global-alert {
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  z-index: 10001;
+  max-width: 80%;
+  visibility: visible;
+}
+
+.boxs .global-alert .alert-content {
+  border-radius: 2.66667vw;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 5.33333vw;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all .3s;
+  color: #fff;
+  font-size: 4.26667vw;
+  line-height: 1.4;
+}
+
+.boxs .global-alert .alert-show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.boxs .alert-show {
+  visibility: visible;
+}
+
+.boxs .register-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.boxs .register-wrap .back-title {
+  text-align: center;
+  position: relative;
+  padding: 2.66667vw;
+  font-size: 4.53333vw;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.boxs .register-wrap .back-title a {
+  position: absolute;
+  left: 2.66667vw;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #ccc;
+  font-size: 8.53333vw;
+}
+
+.boxs .body-space-large {
+  padding: 6.66667vw;
+}
+
+.boxs .body-space-large form .input-wrap {
+  padding: 1.6vw 5.33333vw;
+  background: #fff;
+  font-size: 3.2vw;
+  margin-bottom: 4vw;
+}
+
+.boxs .body-space-large form span {
+  color: #999;
+  font-size: 5.33333vw;
+  vertical-align: middle;
+}
+
+.boxs .body-space-large form .hide {
+  display: none;
+}
+
+.boxs .body-space-large form .reg-input {
+  width: 85%;
+  padding: 2.66667vw 0;
+  font-size: 3.73333vw;
+  margin-left: 2.66667vw;
+}
+
+.boxs .body-space-large form .submit-btn {
+  display: block;
+  padding-top: 3.73333vw;
+  padding-bottom: 3.73333vw;
+  color: #fff;
+  font-size: 4.26667vw;
+  background: #1abc9c;
+  width: 100%;
+  text-align: center;
+  padding: 2.66667vw 0;
+  font-size: 3.73333vw;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 5.33333vw;
+}
+
+.boxs .body-space-large .info {
+  padding-top: 5.33333vw;
+  font-size: 3.2vw;
+  text-align: center;
+  color: #666;
+}
+
+.boxs .body-space-large .info .normal {
+  color: #1abc9c;
+}

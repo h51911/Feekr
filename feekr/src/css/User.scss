@@ -1,0 +1,110 @@
+@function vw($px) {
+    @return ($px/375) * 100vw;
+}
+
+.myuser {
+    height: vw(667);
+    background-color: #f6f6f6;
+
+    .inner-wrap {
+        width: 100%;
+        height: vw(476.8);
+
+        .back-title {
+            text-align: center;
+            position: relative;
+            padding: vw(10);
+            font-size: vw(17);
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+            background: #1abc9c;
+            border-bottom: none;
+            color: #fff;
+        }
+
+        .nav-space {
+            padding-bottom: 60px;
+
+            .user-info {
+                padding: vw(20) 0;
+                background: #fff;
+                border-bottom: 1px solid #F5F5F5;
+                font-size: vw(14);
+                position: relative;
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+
+                .table-cell {
+                    display: table-cell;
+                    vertical-align: middle;
+                    text-align: center;
+
+                    img {
+                        display: inline-block;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                    }
+
+                    .nickname {
+                        font-size: vw(16);
+                        padding: vw(5) 0;
+                        text-align: left;
+                        color: #333;
+                    }
+
+                }
+
+                .icon-right-jiantou {
+                    width: 20%;
+                    font-size: vw(25);
+                }
+            }
+
+            .menu-group {
+                background: #fff;
+                margin-top: vw(15);
+                border-top: 1px solid #F5F5F5;
+
+                a {
+                    padding: vw(15) 0;
+                    border-bottom: 1px solid #F5F5F5;
+                    font-size: vw(14);
+                    position: relative;
+                    background: #fff;
+                    display: table-cell;
+                    vertical-align: middle;
+                    display: table;
+                    width: 100%;
+                    table-layout: fixed;
+
+                    .iconfont {
+                        width: 20%;
+                        font-size: vw(25);
+                        padding-left: vw(50);
+                        color: #999;
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+
+                    .table-cell:nth-child(2) {
+                        width: 60%;
+                        padding-left: vw(20);
+                        display: table-cell;
+                        vertical-align: middle;
+                        color: #333;
+                    }
+
+                    .table-cell:nth-child(3) {
+                        width: 20%;
+                        display: table-cell;
+                        vertical-align: middle;
+                        text-align: center;
+                        padding-left: vw(0);
+                    }
+                }
+            }
+        }
+    }
+}

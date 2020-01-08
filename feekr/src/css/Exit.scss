@@ -1,0 +1,74 @@
+@function vw($px) {
+    @return ($px/375) * 100vw;
+}
+
+.exit {
+    height: vw(667);
+    background-color: #f6f6f6;
+
+    .user-header {
+        text-align: center;
+        position: relative;
+        padding: vw(10);
+        font-size: vw(17);
+        border-bottom: 1px solid #e5e5e5;
+        background: #fff;
+        background: #1abc9c;
+        border-bottom: none;
+        color: #fff;
+
+        a {
+            position: absolute;
+            left: vw(10);
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            color: #ccc;
+            font-size: vw(32);
+            color: #fff;
+        }
+    }
+
+    .menu {
+        .user-menu {
+            font-size: vw(14);
+            padding: vw(15) 0;
+            background: #fff;
+            border-bottom: 1px solid #F5F5F5;
+            color: #333;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+
+            .table-cell {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .table-cell:nth-child(1) {
+                width: 80%;
+                padding-left: vw(20);
+                text-align: left;
+            }
+
+            .table-cell:nth-child(2) {
+                width: 20%;
+            }
+
+        }
+    }
+
+    .logout-btn {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: #fff;
+        width: 100%;
+        color: #1abc9c;
+        font-size: vw(14);
+        text-align: center;
+        padding: vw(15) 0;
+        z-index: 4;
+    }
+}

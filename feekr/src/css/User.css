@@ -1,0 +1,105 @@
+.myuser {
+  height: 177.86667vw;
+  background-color: #f6f6f6;
+}
+
+.myuser .inner-wrap {
+  width: 100%;
+  height: 127.14667vw;
+}
+
+.myuser .inner-wrap .back-title {
+  text-align: center;
+  position: relative;
+  padding: 2.66667vw;
+  font-size: 4.53333vw;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+  background: #1abc9c;
+  border-bottom: none;
+  color: #fff;
+}
+
+.myuser .inner-wrap .nav-space {
+  padding-bottom: 60px;
+}
+
+.myuser .inner-wrap .nav-space .user-info {
+  padding: 5.33333vw 0;
+  background: #fff;
+  border-bottom: 1px solid #F5F5F5;
+  font-size: 3.73333vw;
+  position: relative;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.myuser .inner-wrap .nav-space .user-info .table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.myuser .inner-wrap .nav-space .user-info .table-cell img {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.myuser .inner-wrap .nav-space .user-info .table-cell .nickname {
+  font-size: 4.26667vw;
+  padding: 1.33333vw 0;
+  text-align: left;
+  color: #333;
+}
+
+.myuser .inner-wrap .nav-space .user-info .icon-right-jiantou {
+  width: 20%;
+  font-size: 6.66667vw;
+}
+
+.myuser .inner-wrap .nav-space .menu-group {
+  background: #fff;
+  margin-top: 4vw;
+  border-top: 1px solid #F5F5F5;
+}
+
+.myuser .inner-wrap .nav-space .menu-group a {
+  padding: 4vw 0;
+  border-bottom: 1px solid #F5F5F5;
+  font-size: 3.73333vw;
+  position: relative;
+  background: #fff;
+  display: table-cell;
+  vertical-align: middle;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.myuser .inner-wrap .nav-space .menu-group a .iconfont {
+  width: 20%;
+  font-size: 6.66667vw;
+  padding-left: 13.33333vw;
+  color: #999;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.myuser .inner-wrap .nav-space .menu-group a .table-cell:nth-child(2) {
+  width: 60%;
+  padding-left: 5.33333vw;
+  display: table-cell;
+  vertical-align: middle;
+  color: #333;
+}
+
+.myuser .inner-wrap .nav-space .menu-group a .table-cell:nth-child(3) {
+  width: 20%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding-left: 0vw;
+}
