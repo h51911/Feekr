@@ -1,42 +1,55 @@
+@function vw($px) {
+    @return ($px / 375) * 100vw;
+}
 .Dujia{
     width: 100%;
     margin: 0 auto;
     background: #f6f6f6;
     font-family: PingFangSC-Regular,Source Han Sans,Helvetica,Droid Sans,Arial,sans-serif;
+
+    a{
+        color: inherit;
+    }
+
+    .home-common-base {
+        margin-top: vw(10);
+        padding-left: 3%;
+        padding-right: 3%;
+        background-color: #fff;
+    }
+
     .search-nav {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
         position: relative;
-        top: -0.345rem;
-        padding-bottom: 1.38rem;
+        top: vw(-5);
+        padding-bottom:vw(20);
         background-color: #fff;
     
         .nav-detail {
             width: 25%;
-            margin-top: 1.38rem;
-        }
-    
-        .nav-icon {
-            display: block;
-            margin: 0 auto .61875rem;
-            width: 2.75rem;
-        }
-    
-        .type {
-            text-align: center;
-            font-size: .828rem;
+            margin-top: vw(20);
+
+            .nav-icon {
+                display: block;
+                margin: 0 auto vw(9.9);
+                width: vw(40);
+            }
+
+            .type {
+                text-align: center;
+                font-size:vw(12);
+            }
         }
     }
     
-    .home-common-base {
-        margin-top: .69rem;
-        padding-left: 3%;
-        padding-right: 3%;
-        background-color: #fff;
+
+    .home-hot {
+        padding-bottom: vw(15);
     
         .common-search-entry {
-            padding-bottom: .345rem;
+            padding-bottom: vw(5);
             overflow: hidden;
             background-color: #fff;
     
@@ -44,13 +57,13 @@
                 display: flex;
                 flex-wrap: nowrap;
                 align-items: center;
-                margin-top: 1.5525rem;
-                margin-bottom: 2.2425rem;
-                height: .89625rem;
+                margin-top: vw(22.5);
+                margin-bottom: vw(32.5);
+                height: vw(13);
     
                 .common-search-entry-header-name {
-                    font-size: .966rem;
-                    padding-right: .69rem;
+                    font-size: vw(14);
+                    padding-right: vw(10);
                 }
     
                 .common-search-entry-header-line {
@@ -60,8 +73,8 @@
                 }
 
                 .common-search-entry-header-more {
-                    font-size: .828rem;
-                    padding-left: .69rem;
+                    font-size: vw(12);
+                    padding-left: vw(10);
                     color: rgb(26, 188, 156);
                 }
             }
@@ -69,16 +82,12 @@
             .common-search-entry-nav {
                 display: flex;
 
-                a{
-                    color: inherit;
-                }
-
                 .common-search-entry-item {
                     width: 32%;
                     margin-right: 2%;
                     text-align: center;
-                    font-size: .69rem;
-                    line-height: 1.725rem;
+                    font-size: vw(10);
+                    line-height: vw(25);
 
                     .common-goods-img {
                         width: 100%;
@@ -88,8 +97,8 @@
 
                     .common-goods-content {
                         font-weight: normal;
-                        margin-top: .414rem;
-                        font-size: .8073rem;
+                        margin-top: vw(6);
+                        font-size: vw(12);
                     }
 
                     .one-line-ellipsis {
@@ -99,12 +108,12 @@
                     }
 
                     .common-goods-price {
-                        font-size: .759rem;
-                        line-height: 1.125rem;
+                        font-size: vw(12);
+                        line-height: vw(17);
                         color: rgb(26, 188, 156);
 
                         .common-goods-num {
-                            font-size: .897rem;
+                            font-size: vw(13);
                             font-weight: bold;
                         }
                         .common-goods-unit {
@@ -120,39 +129,36 @@
         }
     }
     
-    .home-hot {
-        padding-bottom: 1.035rem;
-    }
 
     .theme-entry{
         .common-header {
             display: flex;
             align-items: center;
-            padding-top: 1.255rem;
-            height: 1.255rem;
-            line-height: 1.255rem;
+            padding-top: vw(20);
+            height: vw(20);
+            line-height: vw(20);
 
             .commonent-header-line {
-                width: .275375rem;
+                width: vw(4);
                 height: 65%;
-                margin-right: .69rem;
+                margin-right: vw(10);
                 background-color: rgb(26, 188, 156);
             }
 
             .commonent-header-type {
-                font-size: 1.035rem;
+                font-size: vw(15);
             }
 
             .commonent-header-add {
-                text-indent: .69rem;
-                font-size: .828rem;
+                text-indent: vw(10);
+                font-size: vw(12);
                 color: #999;
             }
         }
 
         ul{
             .theme-entry-item {
-                margin-top: 1.5525rem;
+                margin-top: vw(22.5);
                 overflow-x: hidden;
                 border-bottom: .5px solid #e8e8e8;
 
@@ -162,7 +168,7 @@
 
                 .theme-entry-link {
                     width: 100%;
-                    margin-top: 1.311rem;
+                    margin-top: vw(19);
 
                     .theme-entry-img {
                         width: 100%;
@@ -171,11 +177,11 @@
                     }
 
                     .theme-entry-content {
-                        margin-top: .621rem;
-                        margin-bottom: 1.311rem;
-                        text-indent: .69rem;
-                        font-size: .897rem;
-                        line-height: 1.375rem;
+                        margin-top: vw(9);
+                        margin-bottom: vw(19);
+                        text-indent: vw(10);
+                        font-size: vw(13);
+                        line-height: vw(20);
                     }
                 }
             }
@@ -186,9 +192,147 @@
         .common-header {
             display: flex;
             align-items: center;
-            padding-top: 1.255rem;
-            height: 1.255rem;
-            line-height: 1.255rem;
+            padding-top: vw(20);
+            height: vw(20);
+            line-height: vw(20);
+
+            .commonent-header-line {
+                width: vw(4);
+                height: 65%;
+                margin-right: vw(10);
+                background-color: rgb(26, 188, 156);
+            }
+
+            .commonent-header-type {
+                font-size: vw(13);
+            }
+
+            .commonent-header-add {
+                text-indent: vw(10);
+                font-size: vw(12);
+                color: #999;
+                padding-top: vw(2);
+            }
+
+            .story-entry-more {
+                flex-grow: 1;
+                font-size: vw(12);
+                text-align: right;
+                color: #1abc9c!important;
+            }
+        }
+
+        .story-entry-item-box {
+            padding-bottom: vw(10);
+            font-weight: 400;
+
+            .story-entry-item {
+                margin-top: vw(15);
+                padding-bottom: vw(12);
+                border-bottom: .5px solid #e8e8e8;
+
+                .story-entry-link {
+                    display: flex;
+
+                    .story-entry-pic {
+                        height: vw(94) !important;
+                        margin-right: vw(17.5);
+                    }
+
+                    .story-entry-describe {
+                        font-size: vw(13);
+                        line-height: vw(22);
+                        color: #2d2d2d;
+                    }
+
+                    .story-entry-labes {
+                        margin-top: vw(17.5);
+                        font-size: vw(12);
+                        line-height: vw(12);
+                        color: #888;
+                    }
+                }
+            }
+        }
+    }
+
+    .like{
+        .maybe-like{
+            .common-header {
+                display: flex;
+                align-items: center;
+                padding-top: vw(20);
+                height: vw(20);
+                line-height: vw(20);
+
+                .commonent-header-line {
+                    width: vw(4);
+                    height: 65%;
+                    margin-right: vw(10);
+                    background-color: rgb(26, 188, 156);
+                }
+
+                .commonent-header-type {
+                    font-size: vw(15);
+                }
+
+                .commonent-header-add {
+                    text-indent: vw(10);
+                    font-size: vw(12);
+                    color: #999;
+                }
+            }
+
+            .maybe-like-box {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding-top: vw(20);
+
+                .maybe-like-item {
+                    padding-bottom: vw(17.5);
+                    width: 49.2%;
+                    font-size: vw(10);
+                    line-height: vw(17.5);
+                    text-align: center;
+
+                    .common-goods-img {
+                        width: 100%;
+                        vertical-align: middle;
+                        height: 108.125px;
+                    }
+
+                    .common-goods-content {
+                        font-weight: normal;
+                        margin-top: vw(6);
+                    }
+
+                    .one-line-ellipsis {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .common-goods-price {
+                        line-height: vw(22.5);
+                        font-size: vw(11);
+                        color: rgb(26, 188, 156);
+
+                        .common-goods-num {
+                            font-size: vw(13);
+                            font-weight: bold;
+                        }
+
+                        .common-goods-unit {
+                            font-family: PingFangSC;
+                        }
+
+                        .common-goods-bold {
+                            font-family: "PingFangSC-Medium";
+                        }
+                    }
+                }
+            }
         }
     }
 }
