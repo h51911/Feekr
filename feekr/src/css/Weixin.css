@@ -1,0 +1,87 @@
+.footer-box {
+  padding-top: 3.2vw;
+  padding-bottom: 8vw;
+  margin-top: 2.66667vw;
+  margin-bottom: 20.8vw;
+  font-size: 3.2vw;
+  text-align: center;
+  color: #888;
+  background-color: #fff;
+}
+
+.footer-box .footer-box-brand {
+  margin: 0 auto;
+  padding: 2.66667vw 0;
+}
+
+.footer-box .footer-box-brand p {
+  line-height: 5.33333vw;
+}
+
+.footer-box .footer-box-brand p .footer-box-logo {
+  vertical-align: middle;
+  font-size: 13.33333vw;
+  line-height: 5.33333vw;
+  color: #000;
+}
+
+.footer-box .footer-box-brand p .iconfont {
+  font-family: "iconfont" !important;
+}
+
+.footer-box .footer-box-brand p .icon-feekr:before {
+  content: "\e612";
+}
+
+.footer-box .footer-box-brand .footer-box-link {
+  position: relative;
+  justify-content: center;
+  display: inline-block;
+  line-height: 5.33333vw;
+  align-items: center;
+}
+
+.footer-box .footer-box-brand .footer-box-link a {
+  color: #333;
+}
+
+.footer-box .footer-box-brand .footer-box-link:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  bottom: -2.66667vw;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.footer-box .footer-box-vcode {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 4vw;
+  border-bottom: 1px dashed #e8e8e8;
+}
+
+.footer-box .footer-box-vcode img {
+  vertical-align: middle;
+  margin: 4vw auto;
+  width: 26.66667vw;
+}
+
+.footer-box .footer-box-vcode p {
+  line-height: 5.33333vw;
+}
+
+.footer-box .footer-box-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vw;
+}
+
+.footer-box .footer-box-btns a {
+  padding: 1.6vw 4.53333vw;
+  margin: 0 2.66667vw;
+  font-size: 3.73333vw;
+  border-radius: 3.2vw;
+  color: #fff;
+  background-color: #1abc9c;
+}

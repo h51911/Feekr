@@ -1,57 +1,82 @@
 import React, { Component } from 'react';
+
 import Search from '../components/search';
 
 import { Carousel } from 'antd';
 
 import '../css/Dujia.css';
 
+import Like from '../api/Like';
+import Weixin from '../components/Weixin';
+
 class Dujia extends Component {
 
-    state = {
-        navlist: [{
-            nav_id: "1",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-guonei-n.png",
-            nav_name: "国内酒店"
-        },
-        {
-            nav_id: "2",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-guowai-n.png ",
-            nav_name: "海外酒店"
-        },
-        {
-            nav_id: "3",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-pingpai-n.png ",
-            nav_name: "品牌酒店"
-        },
-        {
-            nav_id: "4",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-wanle-n.png",
-            nav_name: "玩乐体验"
-        },
-        {
-            nav_id: "5",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-zhoubian-n.png",
-            nav_name: "周边游"
-        },
-        {
-            nav_id: "6",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-xiaotuan-n.png",
-            nav_name: "精品小团"
-        },
-        {
-            nav_id: "7",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-sijia-n.png",
-            nav_name: "私家定制"
-        },
-        {
-            nav_id: "8",
-            nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-gonglv-n.png",
-            nav_name: "攻略推荐"
-        },
-        ]
+    constructor() {
+        super();
+
+        this.state = {
+            navlist: [{
+                nav_id: "1",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-guonei-n.png",
+                nav_name: "国内酒店"
+            },
+            {
+                nav_id: "2",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-guowai-n.png ",
+                nav_name: "海外酒店"
+            },
+            {
+                nav_id: "3",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-pingpai-n.png ",
+                nav_name: "品牌酒店"
+            },
+            {
+                nav_id: "4",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-wanle-n.png",
+                nav_name: "玩乐体验"
+            },
+            {
+                nav_id: "5",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-zhoubian-n.png",
+                nav_name: "周边游"
+            },
+            {
+                nav_id: "6",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-xiaotuan-n.png",
+                nav_name: "精品小团"
+            },
+            {
+                nav_id: "7",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-sijia-n.png",
+                nav_name: "私家定制"
+            },
+            {
+                nav_id: "8",
+                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-gonglv-n.png",
+                nav_name: "攻略推荐"
+            },
+            ],
+            num: [],
+        }
+    }
+
+    async componentDidMount() {
+        let res = await Like.get({
+            page: 1,
+            shopid: 'FK',
+        })
+        // console.log(res);
+
+        let data = res.data.result.list;
+        // console.log(data);
+
+        this.setState({
+            num: data,
+        })
+        console.log(this.state);
     }
     render() {
-        let { navlist } = this.state;
+        let { navlist, num } = this.state;
         return <div className="Dujia">
             <Search />
             <Carousel className="autoplay">
@@ -236,20 +261,25 @@ class Dujia extends Component {
                         <span className="commonent-header-add">这些也许是你喜欢的</span>
                     </div>
                     <div className="maybe-like-box">
-                        <a href="###" className="common-goods maybe-like-item">
-                            <img src="https://p-product-pic.feekr.com/2019/1128/518153f4.jpg!400X250"
-                                className="common-goods-img lazyloaded" />
-                            <h3 className="common-goods-content one-line-ellipsis">周末不涨价！金华巨龙温泉旅游度假村|独享温泉度假养生</h3>
-                            <p className="common-goods-price">
-                                <span className="common-goods-num">¥599&nbsp;</span>起
-                                <span className="common-goods-unit">
-                                    <span className="common-goods-bold">/</span>晚
-                                </span>
-                            </p>
-                        </a>
+                        {
+                            num.map(item => {
+                                return <a href="###" className="common-goods maybe-like-item" key={item.id}>
+                                    <img src={item.cover}
+                                        className="common-goods-img lazyloaded" />
+                                    <h3 className="common-goods-content one-line-ellipsis">{item.productName}</h3>
+                                    <p className="common-goods-price">
+                                        <span className="common-goods-num">{item.currentPrice}&nbsp;</span>起
+                                   <span className="common-goods-unit">
+                                            <span className="common-goods-bold">/{item.unitCount}</span>{item.unit}
+                                        </span>
+                                    </p>
+                                </a>
+                            })
+                        }
                     </div>
                 </div>
             </div>
+            <Weixin></Weixin>
         </div>
     }
 }
