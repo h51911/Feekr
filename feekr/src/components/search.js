@@ -61,7 +61,7 @@ class Search extends Component {
         if (aa != '' && !res) {
             // console.log(111)
             this.state.history.push(aa)
-            let Item=this.state.history.toString()
+            let Item = this.state.history.toString()
             // console.log(Item)
             localStorage.setItem('search', Item)
             this.setState({
@@ -86,6 +86,7 @@ class Search extends Component {
         let data = localStorage.getItem('search')
         if (data) {
             let data1 = data.split(',')
+            console.log(data1)
             if (data) {
                 this.setState({
                     history: data1,
@@ -98,8 +99,6 @@ class Search extends Component {
                 })
             }
         }
-
-        // console.log(data1)
 
 
 
