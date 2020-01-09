@@ -96,12 +96,25 @@ html, body {
   font-size: 1rem;
 }
 
-.top-search .box .hot-search .tag-container {
+.top-search .box .del-search-btn {
+  float: right;
+}
+
+.top-search .box .del-search-btn .icon-lajitong {
+  font-size: 1.5625rem;
+  color: #999;
+}
+
+.top-search .box .del-search-btn .icon-lajitong ::before {
+  content: "\e62e";
+}
+
+.top-search .box .tag-container {
   width: 85%;
   margin: .625rem auto 0;
 }
 
-.top-search .box .hot-search .tag-container .tag-item {
+.top-search .box .tag-container .tag-item {
   font-size: .625rem;
   margin-top: .625rem;
   display: inline-block;

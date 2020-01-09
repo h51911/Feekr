@@ -3,10 +3,7 @@ import '../css/Morenews.css'
 import Zixun from '../api/Zixun';
 import '../utils/base.css'
 class Morenews extends Component {
-    // let data=props
-    // console.log(data.data.t1)
-    // let t1=data.data.t1
-    // let t2=data.data.t2
+   
     constructor() {
         super();
         this.state = {
@@ -26,11 +23,8 @@ class Morenews extends Component {
     }
     handleScroll = (event) => {
         //滚动条高度
-
-
         let scrollTop = document.documentElement.scrollTop;  //滚动条滚动高度
-
-        console.log(scrollTop)
+        // console.log(scrollTop)
         if (scrollTop == 383) {
             setTimeout(async () => {
                 let res = await Zixun.get({
