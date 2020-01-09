@@ -195,7 +195,7 @@ class App extends Component {
                             })
                         }
                     </div>
-                    <a className="get-more font-md txt-center" href="/column/news">更多目的地推荐</a>
+                    <a className="get-more font-md txt-center" onClick={this.changeMenu.bind(this,'/gonglve')} >更多目的地推荐</a>
                 </section>
                 <section className="list-container selected-container"> 
                     <Title data={this.state.menu3[3]} />
