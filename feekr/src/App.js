@@ -12,7 +12,9 @@ import Reg from './pages/Reg'
 import Forget from './pages/Forget'
 import User from './pages/User'
 import Exit from './pages/Exit'
+import Xiangqing from './pages/Xiangqing'
 import 'antd/dist/antd.css'
+// import './utils/rem'
 import Morenews from './pages/Morenews'
 class App extends Component {
     render() {
@@ -31,6 +33,7 @@ class App extends Component {
                 <Route path="/user/:id" component={User} />
                 <Route path="/exit" component={Exit} />
                 <Route path="/forget" component={Forget} />
+                <Route path="/xiangqing" component={Xiangqing} />
                 <Route path="/yanjiusuo" component={Home} />
                 <Route path="/home" component={Home} />
                 <Redirect from="/" to="/home" exact />

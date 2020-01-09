@@ -10,7 +10,7 @@ import Dangjiyouhui from '../api/Dangjiyouhui';
 import Mudidi from '../api/Mudidi.js';
 import Selected from '../api/Selected.js';
 
-class App extends Component {
+class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -149,7 +149,7 @@ class App extends Component {
                     <div className="list sales-in-wrap clearfix">
                         {
                             menu4.map(item => {
-                                return <a className="txt-center product-item pull-left" key={item.productId} href="">
+                                return <a className="txt-center product-item pull-left" onClick={this.changeMenu.bind(this,item.productId)} key={item.productId} >
                                     <img className="product-cover lazy" src={item.productCover} />
                                     <p className="font-sm product-title">{item.productName}
                                     </p>
@@ -166,7 +166,7 @@ class App extends Component {
                     <div className="list sales-in-wrap clearfix">
                         {
                             menu5.map(item => {
-                                return <a className="txt-center product-item pull-left" key={item.productId} href={item.webUrl} >
+                                return <a className="txt-center product-item pull-left" onClick={this.changeMenu.bind(this,`xiangqing/${item.productId}`)} key={item.productId} >
                                     <img className="product-cover lazy" src={item.productCover} />
                                     <p className="font-sm product-title">{item.productName}
                                     </p>
@@ -240,5 +240,5 @@ class App extends Component {
         </div>
     }
 }
-App = withRouter(App)
-export default App;
+Home = withRouter(Home)
+export default Home;
