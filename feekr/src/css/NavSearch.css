@@ -1,0 +1,46 @@
+.nav-search-main {
+  width: 100%;
+  margin: 0 auto;
+  background: #f6f6f6;
+  font-family: PingFangSC-Regular,Source Han Sans,Helvetica,Droid Sans,Arial,sans-serif;
+}
+
+.nav-search-main .nav-common-layout-fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-width: 333.33333vw;
+  margin: 0 auto;
+}
+
+.nav-search-main .nav-common-layout-fix .search-gate-box {
+  position: relative;
+  padding: 4vw 2%;
+  border-bottom: 0.13333vw solid #e6e6e6;
+  background-color: #fff;
+}
+
+.nav-search-main .nav-common-layout-fix .search-gate-box .search-gate-entrance {
+  height: 6.66667vw;
+  display: flex;
+  align-items: center;
+  padding: 1.33333vw 2.66667vw;
+  border-radius: 3.73333vw;
+  font-size: 3.2vw;
+  color: #000;
+  background-color: #f6f6f6;
+}
+
+.nav-search-main .nav-common-layout-fix .search-gate-box .search-gate-entrance .search-gate-icon {
+  flex-shrink: 0;
+  margin-right: 1.6vw;
+  font-size: 3.73333vw;
+}
+
+.nav-search-main .nav-common-layout-fix .search-gate-box .search-gate-entrance .iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}

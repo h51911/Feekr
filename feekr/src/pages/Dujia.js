@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// import { Route, Switch } from 'react-router-dom'
+
 import Search from '../components/search';
 
 import { Carousel } from 'antd';
@@ -10,11 +12,12 @@ import '../css/Dujia.css';
 
 import Like from '../api/Like';
 import Weixin from '../components/Weixin';
+import NavSearch from './NavSearch';
 
 class Dujia extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             navlist: [{
@@ -62,6 +65,14 @@ class Dujia extends Component {
         }
     }
 
+    changeMenu(cur) {
+        // console.log(cur)
+        this.props.history.push(cur)
+        this.setState({
+            selectedKeys: [this.props.history.location.pathname]
+        })
+    }
+
     async componentDidMount() {
         let res = await Like.get({
             page: 1,
@@ -96,20 +107,47 @@ class Dujia extends Component {
     render() {
         let { navlist, num } = this.state;
         return <div className="Dujia">
+            {/* <Switch>
+                <Route path="/navsearch" component={NavSearch} />
+            </Switch> */}
             <Search />
-            <Carousel className="autoplay">
-                <img src="https://banner01.feekr.com/2019/12/25/0524295e032acda5c37.jpg!750X360" />
-            </Carousel>
-            <ul className="search-nav">
+            <Carousel autoplay>
+                <div className="banner">
+                    <img src="https://banner01.feekr.com/2020/01/02/0454155e0dafb7aed57.jpg!750X360" />
+                </div>
+                <div className="banner">
+                    <img src="https://banner01.feekr.com/2019/12/19/0353305dfb2c7a280ab.jpg!750X360" />
+                </div>
+                <div className="banner">
+                    <img src="https://banner01.feekr.com/2020/01/07/0616065e145a6656249.jpg!750X360" />
+                </div>
+                <div className="banner">
+                    <img src="https://banner01.feekr.com/2019/12/25/0524295e032acda5c37.jpg!750X360" />
+                </div>
+                <div className="banner">
+                    <img src="https://banner01.feekr.com/2019/12/19/0530125dfb43244cd77.jpg!750X360" />
+                </div>
+                <div className="banner">
+                    <img src="https://banner01.feekr.com/2019/12/03/0418035de61a3bee6e5.png!750X360" />
+                </div>
+                <div className="banner">
+                    <img src="https://banner01.feekr.com/2019/12/25/0523235e032a8b79c85.jpg!750X360" />
+                </div>
+            </Carousel> ,
+            {/* <Carousel className="autoplay">
+                <img src="https://banner01.feekr.com/2020/01/02/0454155e0dafb7aed57.jpg!750X360" />
+                <img src="https://banner01.feekr.com/2020/01/02/0454155e0dafb7aed57.jpg!750X360" />
+            </Carousel> */}
+            < ul className="search-nav" >
                 {
                     navlist.map((item, index) => {
-                        return <li className="nav-detail" key={item.nav_id}>
+                        return <li className="nav-detail" key={item.nav_id} onClick={this.changeMenu.bind(this)}>
                             <img src={item.nav_img} className="nav-icon" />
                             <p className="type">{item.nav_name}</p>
                         </li>
                     })
                 }
-            </ul>
+            </ul >
             <div className="home-hot home-common-base">
                 <div className="common-search-entry">
                     <div className="common-search-entry-header">
@@ -298,7 +336,7 @@ class Dujia extends Component {
                 </div>
             </div>
             <Weixin></Weixin>
-        </div>
+        </div >
     }
 }
 
