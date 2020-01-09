@@ -7,6 +7,12 @@
     background: #f6f6f6;
     font-family: PingFangSC-Regular,Source Han Sans,Helvetica,Droid Sans,Arial,sans-serif;
 
+    .iconfont {
+        font-family: "iconfont" !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+
     .nav-common-layout-fix {
         position: fixed;
         top: 0;
@@ -23,7 +29,7 @@
             background-color: #fff;
 
             .search-gate-entrance {
-                height: vw(25);
+                height: vw(35);
                 display: flex;
                 align-items: center;
                 padding: vw(5) vw(10);
@@ -38,10 +44,150 @@
                     font-size: vw(14);
                 }
 
-                .iconfont {
-                    font-family: "iconfont" !important;
-                    font-style: normal;
-                    -webkit-font-smoothing: antialiased;
+                .search-gate-input {
+                    flex-grow: 1;
+                    outline-offset: 0;
+                    line-height: inherit;
+                    background-color: #f6f6f6;
+                    line-height: vw(14);
+                }
+
+                .search-gate-clear {
+                    flex-shrink: 0;
+                    font-size: vw(20);
+                    line-height: inherit;
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .search-select-box{
+        .search-select-options {
+            display: flex;
+            justify-content: space-around;
+            // height: vw(16);
+            padding: vw(11.5) 0;
+            background-color: #fff;
+            border-bottom: .5px solid #e6e6e6;
+
+            .search-select-items {
+                width: 33%;
+                font-size: vw(11);
+                line-height: vw(16);
+                text-align: center;
+                border-right: .5px solid #e6e6e6;
+                background: #fff;
+                color: #000;
+
+                .search-select-items {
+                    display: inline-block;
+                    margin-left: vw(7);
+                    font-size: vw(9);
+                    color: #888;
+                }
+            }
+        }
+
+        .search-select-detail {
+            height: vw(667);
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.1);
+
+            .search-select-label {
+                padding-left: vw(17.5);
+                line-height: vw(35.5);
+                font-size: vw(13);
+                background-color: #fff;
+                border-bottom: .5px solid #e6e6e6;
+                color: #000;
+            }
+        }
+
+        .search-select-sub-box {
+            display: flex;
+
+            .search-select-sub {
+                width: 30%;
+                height: vw(346.9);
+                background-color: #f6f6f6;
+
+                li {
+                    padding-left: 0;
+                    text-align: center;
+                    background-color: transparent;
+                }
+            }
+
+            .search-select-sub-detail {
+                flex-grow: 1;
+            }
+
+            .common-scroll-y {
+                overflow-y: scroll;
+            }
+
+            .search-select-more {
+                height: vw(346.9);
+                background-color: #fff;
+
+                .search-select-label {
+                    padding-left: vw(17.5);
+                    line-height: vw(35.5);
+                    font-size: vw(13);
+                    background-color: #fff;
+                    border-bottom: .5px solid #e6e6e6;
+
+                    .search-select-area {
+                        font-size: vw(11);
+                        color: #a6a6a6;
+                    }
+                }
+            }
+        }
+    }
+    .search-result-product {
+        padding: vw(105) 2% 0;
+
+        li {
+            position: relative;
+            padding-bottom: vw(16);
+            margin-bottom: vw(13);
+            text-align: center;
+            border: .5px solid #e8e8e8;
+            background-color: #fff;
+
+            a{
+                img {
+                    width: 100%;
+                    height: vw(201.997);
+                    vertical-align: middle;
+                }
+
+                h3 {
+                    margin-top: vw(19);
+                    font-size: vw(15);
+                    line-height: vw(28);
+                    color: #000;
+                    margin-bottom: 0;
+                }
+
+                h4 {
+                    font-size: vw(12);
+                    line-height: vw(25);
+                    color: #666;
+                }
+
+                span {
+                    position: absolute;
+                    top: vw(15);
+                    left: 0;
+                    width: vw(70);
+                    text-align: center;
+                    font-size: vw(15);
+                    line-height: vw(32.5);
+                    color: #fff;
+                    background-color: rgba(26, 188, 156, 0.8);
                 }
             }
         }

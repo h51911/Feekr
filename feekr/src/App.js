@@ -17,6 +17,7 @@ import 'antd/dist/antd.css'
 // import './utils/rem'
 import Morenews from './pages/Morenews'
 import Guide from './pages/Guide'
+import NavSearch from './pages/NavSearch'
 class App extends Component {
     render() {
         // console.log('app', this.props)
@@ -39,6 +40,7 @@ class App extends Component {
                 <Route path="/home" component={Home} />
                 {/* 动态路由，嵌套路由 */}
                 <Route path="/gonglve/guide/:id" component={Guide} />
+                <Route path="/navsearch" component={NavSearch} />
                 <Redirect from="/" to="/home" exact />
             </Switch>
             <Nav path={this.props.location.pathname} />
