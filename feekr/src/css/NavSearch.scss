@@ -1,0 +1,49 @@
+@function vw($px) {
+    @return ($px / 375) * 100vw;
+}
+.nav-search-main{
+    width: 100%;
+    margin: 0 auto;
+    background: #f6f6f6;
+    font-family: PingFangSC-Regular,Source Han Sans,Helvetica,Droid Sans,Arial,sans-serif;
+
+    .nav-common-layout-fix {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        max-width: vw(1250);
+        margin: 0 auto;
+
+        .search-gate-box {
+            position: relative;
+            padding: vw(15) 2%;
+            border-bottom: vw(0.5) solid #e6e6e6;
+            background-color: #fff;
+
+            .search-gate-entrance {
+                height: vw(25);
+                display: flex;
+                align-items: center;
+                padding: vw(5) vw(10);
+                border-radius: vw(14);
+                font-size: vw(12);
+                color: #000;
+                background-color: #f6f6f6;
+
+                .search-gate-icon {
+                    flex-shrink: 0;
+                    margin-right: vw(6);
+                    font-size: vw(14);
+                }
+
+                .iconfont {
+                    font-family: "iconfont" !important;
+                    font-style: normal;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
+        }
+    }
+}

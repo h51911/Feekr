@@ -6,6 +6,37 @@
     margin: 0 auto;
     background: #f6f6f6;
     font-family: PingFangSC-Regular,Source Han Sans,Helvetica,Droid Sans,Arial,sans-serif;
+
+    .banner{
+        img{
+            width: 100%;
+            height: vw(180);
+        }
+    }
+
+    .slick-dots-bottom{
+        position: absolute!important;
+        bottom: vw(16)!important;
+        height: vw(8)!important;
+
+        li{
+            width: vw(8)!important;
+            height: vw(8)!important;
+            // display: inline-block!important;
+            border-radius: 100%!important;
+            background: #000!important;
+            opacity: 0.2!important;
+            margin: 0 vw(4)!important;
+            button{
+                width: vw(0)!important;
+                height: vw(0)!important;
+            }
+        }
+        .slick-active{
+            background: #fff!important;
+            opacity: 1!important;
+        }
+    }
     
 
     a{
