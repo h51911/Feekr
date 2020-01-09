@@ -14,13 +14,14 @@ import User from './pages/User'
 import Exit from './pages/Exit'
 import 'antd/dist/antd.css'
 import Morenews from './pages/Morenews'
+import Guide from './pages/Guide'
 class App extends Component {
     render() {
         // console.log('app', this.props)
 
         return <div>
             <Switch>
-                <Route path="/gonglve" component={Gonglve} />
+                <Route path="/gonglve" component={Gonglve} exact />
                 {/* <Route path="/discover" component={Discover} /> */}
                 <Route path="/gengduo" component={Morenews} />
                 <Route path="/dujia" component={Dujia} />
@@ -33,6 +34,8 @@ class App extends Component {
                 <Route path="/forget" component={Forget} />
                 <Route path="/yanjiusuo" component={Home} />
                 <Route path="/home" component={Home} />
+                {/* 动态路由，嵌套路由 */}
+                <Route path="/gonglve/guide/:id" component={Guide} />
                 <Redirect from="/" to="/home" exact />
             </Switch>
             <Nav path={this.props.location.pathname} />

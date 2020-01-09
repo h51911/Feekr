@@ -8,7 +8,7 @@ class Nav extends Component {
 
     componentDidUpdate() {
 
-        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget') {
+        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
             // console.log(findDOMNode(this.refs.comment));
             findDOMNode(this.refs.comment).style.display = 'none'
         } else {
@@ -18,7 +18,7 @@ class Nav extends Component {
     }
     componentDidMount() {
 
-        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget') {
+        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
             // console.log(findDOMNode(this.refs.comment));
             findDOMNode(this.refs.comment).style.display = 'none'
         } else {
@@ -28,7 +28,7 @@ class Nav extends Component {
     }
     render() {
 
-        // console.log('nav', this.props.path)
+        // console.log('nav', this.props.path.indexOf('/guide/'))
         return <>
             <div className="nav" ref='comment' style={{ display: 'block' }}>
                 <nav className="nav-wrap table-mode">
