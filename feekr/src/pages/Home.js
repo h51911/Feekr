@@ -70,7 +70,7 @@ class Home extends Component {
         this.changeMenu = this.changeMenu.bind(this)
     }
     changeMenu(cur) {
-        // console.log(cur)
+        console.log(cur)
         this.props.history.push(cur)
         this.setState({
             selectedKeys: [this.props.history.location.pathname]

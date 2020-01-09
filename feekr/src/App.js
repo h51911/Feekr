@@ -16,6 +16,7 @@ import Xiangqing from './pages/Xiangqing'
 import 'antd/dist/antd.css'
 // import './utils/rem'
 import Morenews from './pages/Morenews'
+import NavSearch from './pages/NavSearch'
 class App extends Component {
     render() {
         // console.log('app', this.props)
@@ -36,6 +37,7 @@ class App extends Component {
                 <Route path="/xiangqing" component={Xiangqing} />
                 <Route path="/yanjiusuo" component={Home} />
                 <Route path="/home" component={Home} />
+                <Route path="/navsearch" component={NavSearch} />
                 <Redirect from="/" to="/home" exact />
             </Switch>
             <Nav path={this.props.location.pathname} />
