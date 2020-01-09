@@ -68,13 +68,43 @@ class Home extends Component {
             img:['./img/hangzhou.jpg','./img/taibei.jpg','./img/chongqing.jpg','./img/lasa.jpg']
         }
         this.changeMenu = this.changeMenu.bind(this)
+        this.changeMenu2 = this.changeMenu2.bind(this)
     }
     changeMenu(cur) {
         // console.log(cur)
+        // console.log(cur.bb)
         this.props.history.push(cur)
-        this.setState({
-            selectedKeys: [this.props.history.location.pathname]
-        })
+    }
+    changeMenu2(cur) {
+        // console.log(cur.bb)
+        let headata=cur.bb.split('product/')
+        let productId=cur.aa.split('/')[1]
+        // console.log(productId)
+        let channel=headata[1].split('?')[0].split('/')[1]
+        // console.log(channel)
+        let pvFrom1=headata[1].split('?')
+        // console.log(pvFrom1)
+        if(pvFrom1.length==2){
+            let pvFrom=pvFrom1[1].split('=')[1]
+            // console.log(pvFrom)
+            let head={
+                productId,
+                channel,
+                pvFrom,
+                shopid:'FK'
+            }
+            this.props.history.push({ pathname: cur.aa, state: head })
+        }else{
+            let head={
+                productId,
+                channel,
+                shopid:'FK'
+            }
+            this.props.history.push({ pathname: cur.aa, state: head })
+        }
+       
+        // console.log(headata[1])
+       
     }
     async componentDidMount() {
         let res = await Zixun.get({
@@ -95,7 +125,7 @@ class Home extends Component {
             item.cover=this.state.img[idx]
         });
         let data5=res4.data.result.list
-        console.log(data3)
+        // console.log(data3)
         this.setState({
             menu2: data,
             menu4: data2,
@@ -149,7 +179,7 @@ class Home extends Component {
                     <div className="list sales-in-wrap clearfix">
                         {
                             menu4.map(item => {
-                                return <a className="txt-center product-item pull-left" onClick={this.changeMenu.bind(this,item.productId)} key={item.productId} >
+                                return <div className="txt-center product-item pull-left" onClick={this.changeMenu2.bind(this,{aa:`xiangqing/${item.productId}`,bb:item.webUrl})} key={item.productId} >
                                     <img className="product-cover lazy" src={item.productCover} />
                                     <p className="font-sm product-title">{item.productName}
                                     </p>
@@ -157,7 +187,7 @@ class Home extends Component {
                                     <p className="font-sm price">
                                         ￥<span className="font-md">{item.productPrice}</span> 起
                                          </p>
-                                </a>
+                                </div>
                             })
                         }
 
@@ -166,7 +196,7 @@ class Home extends Component {
                     <div className="list sales-in-wrap clearfix">
                         {
                             menu5.map(item => {
-                                return <a className="txt-center product-item pull-left" onClick={this.changeMenu.bind(this,`xiangqing/${item.productId}`)} key={item.productId} >
+                                return <div className="txt-center product-item pull-left" onClick={this.changeMenu2.bind(this,{aa:`xiangqing/${item.productId}`,bb:item.webUrl})} key={item.productId} >
                                     <img className="product-cover lazy" src={item.productCover} />
                                     <p className="font-sm product-title">{item.productName}
                                     </p>
@@ -174,7 +204,7 @@ class Home extends Component {
                                     <p className="font-sm price">
                                         ￥<span className="font-md">{item.productPrice}</span> 起
                                          </p>
-                                </a>
+                                </div>
                             })
                         }
 

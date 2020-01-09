@@ -62,7 +62,7 @@ class Search extends Component {
             // console.log(111)
             this.state.history.push(aa)
             let Item=this.state.history.toString()
-            console.log(Item)
+            // console.log(Item)
             localStorage.setItem('search', Item)
             this.setState({
                 history:this.state.history,

@@ -33,7 +33,7 @@ class App extends Component {
                 <Route path="/user" component={User} />
                 <Route path="/exit" component={Exit} />
                 <Route path="/forget" component={Forget} />
-                <Route path="/xiangqing" component={Xiangqing} />
+                <Route path="/xiangqing"  component={Xiangqing} />
                 <Route path="/yanjiusuo" component={Home} />
                 <Route path="/home" component={Home} />
                 <Redirect from="/" to="/home" exact />

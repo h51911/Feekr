@@ -1,11 +1,66 @@
+.xiangqing {
+  background: #f6f6f6;
+}
+
 .xiangqing .ant-carousel .slick-slide {
   text-align: center;
-  height: 10rem;
-  line-height: 10rem;
-  background: #364d79;
+  height: 13.1875rem;
   overflow: hidden;
 }
 
 .xiangqing .ant-carousel .slick-slide h3 {
   color: #fff;
+}
+
+.xiangqing .product-detail-head {
+  position: relative;
+  padding: 0 .75rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-head .product-detail-art {
+  font-size: 1.0625rem;
+  line-height: 1.5625rem;
+  padding-top: .78125rem;
+  padding-bottom: 1rem;
+}
+
+.xiangqing .product-detail-head .product-detail-name {
+  font-size: .6875rem;
+  color: #666;
+}
+
+.xiangqing .product-detail-head .product-detail-price {
+  color: #1abc9c;
+  margin-top: 1.125rem;
+  padding-bottom: .875rem;
+  line-height: .1875rem;
+}
+
+.xiangqing .product-detail-menu {
+  color: #1abc9c;
+  display: flex;
+  margin-top: .8125rem;
+  padding: 0 1.3125rem;
+  line-height: 3.75rem;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-menu span {
+  flex-grow: 1;
+  font-size: .9375rem;
+}
+
+.xiangqing .product-detail-menu i {
+  font-size: 1.25rem;
+  width: 1.25rem;
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  color: #1abc9c;
+}
+
+.xiangqing .product-detail-menu .icon-jiantou ::before {
+  content: "\e62c";
 }
