@@ -1,11 +1,126 @@
-.ant-carousel .slick-slide {
+#gonglve {
+  background-color: #f6f6f6;
+}
+
+#gonglve .season-recommend-container .season-recommend {
+  background: #fff;
+  margin-top: 2.66667vw;
+}
+
+#gonglve .season-recommend-container .season-recommend .header-title-wrap {
+  color: #2D2D2D;
+  padding: 4vw 0;
+  line-height: 1.8;
+  font-family: PingFangSC-Regular, Helvetica, "Droid Sans", Arial, sans-serif !important;
+  font-size: 4.26667vw !important;
   text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #364d79;
+}
+
+#gonglve .season-recommend-container .season-recommend .header-title-wrap .section-title {
+  vertical-align: middle;
+}
+
+#gonglve .season-recommend-container .season-recommend .item-container {
+  border-bottom: 1px solid #F6F6F6;
+  border-bottom: .5px solid #F6F6F6;
+  padding: 2.66667vw;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 83.54667vw;
   overflow: hidden;
 }
 
-.ant-carousel .slick-slide h3 {
-  color: #fff;
+#gonglve .season-recommend-container .season-recommend .item-container .item {
+  display: block;
+  width: 48.5%;
+  margin-left: 3%;
+  margin-bottom: 4vw;
+  line-height: 1.8;
+  float: left;
+}
+
+#gonglve .season-recommend-container .season-recommend .item-container .item:nth-child(odd) {
+  margin-left: 0;
+}
+
+#gonglve .season-recommend-container .season-recommend .item-container .item img {
+  max-height: 24vw;
+  width: 100%;
+  height: 24vw;
+}
+
+#gonglve .season-recommend-container .season-recommend .item-container .item .item-title {
+  color: #2D2D2D;
+  padding: 1.33333vw 0 0;
+  font-size: 3.73333vw !important;
+  text-align: center;
+}
+
+#gonglve .season-recommend-container .season-recommend .item-container .item .city-desc {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #666;
+  font-size: 3.2vw !important;
+  text-align: center;
+}
+
+#gonglve .area-list-container {
+  display: block;
+  padding-bottom: 60px;
+}
+
+#gonglve .area-list-container .area-list {
+  background: #fff;
+  margin-top: 2.66667vw;
+}
+
+#gonglve .area-list-container .area-list .body-space {
+  padding: 2.66667vw;
+}
+
+#gonglve .area-list-container .area-list .body-space .header-title-wrap {
+  color: #2D2D2D;
+  padding: 4vw 0;
+  line-height: 1.8;
+  font-size: 4.26667vw !important;
+  text-align: center;
+}
+
+#gonglve .area-list-container .area-list .body-space .header-title-wrap .section-title {
+  vertical-align: middle;
+  font-family: PingFangSC-Regular, Helvetica, "Droid Sans", Arial, sans-serif !important;
+}
+
+#gonglve .area-list-container .area-list .body-space .header-title-wrap .sub-title {
+  color: #666;
+  font-size: 3.2vw !important;
+  text-align: center;
+}
+
+#gonglve .area-list-container .area-list .body-space .item {
+  display: block;
+  width: 32%;
+  margin-right: 2%;
+  margin-left: 0;
+  margin-bottom: 4vw;
+  line-height: 1.8;
+  float: left;
+}
+
+#gonglve .area-list-container .area-list .body-space .item:nth-child(3n+1) {
+  margin-right: 0;
+}
+
+#gonglve .area-list-container .area-list .body-space .item img {
+  max-height: 24vw;
+  width: 100%;
+  height: 22.8vw;
+}
+
+#gonglve .area-list-container .area-list .body-space .item .item-title {
+  color: #2D2D2D;
+  padding: 1.33333vw 0 0;
+  font-size: 3.73333vw !important;
+  text-align: center;
 }
