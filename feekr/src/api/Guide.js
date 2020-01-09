@@ -12,6 +12,14 @@ export const detail = async (params, config = {}) => {
     })
     return data
 }
+export const guidecategory = async (params, config = {}) => {
+    // console.log(params, config)
+    let { data } = await com.get('guidecategory', {
+        ...config,
+        params
+    })
+    return data
+}
 export const themelist = async (params, config = {}) => {
     // console.log(params, config)
     let { data } = await com.get('themelist', {
@@ -57,6 +65,7 @@ export const nearby = async (params, config = {}) => {
 
 export default {
     detail,
+    guidecategory,
     themelist,
     pathlist,
     articlelist,

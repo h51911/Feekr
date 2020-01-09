@@ -17,6 +17,7 @@ import 'antd/dist/antd.css'
 // import './utils/rem'
 import Morenews from './pages/Morenews'
 import Guide from './pages/Guide'
+import Theme from './pages/Theme'
 class App extends Component {
     render() {
         // console.log('app', this.props)
@@ -34,10 +35,11 @@ class App extends Component {
                 <Route path="/user/:id" component={User} />
                 <Route path="/exit" component={Exit} />
                 <Route path="/forget" component={Forget} />
-                <Route path="/xiangqing"  component={Xiangqing} />
+                <Route path="/xiangqing" component={Xiangqing} />
                 <Route path="/yanjiusuo" component={Home} />
                 <Route path="/home" component={Home} />
                 {/* 动态路由，嵌套路由 */}
+                <Route path="/gonglve/guide/theme/:id" component={Theme} />
                 <Route path="/gonglve/guide/:id" component={Guide} />
                 <Redirect from="/" to="/home" exact />
             </Switch>

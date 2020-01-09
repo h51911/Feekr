@@ -12,6 +12,7 @@
   opacity: .8;
   display: block;
   width: 100%;
+  height: 58.93333vw;
 }
 
 .guide-wrap .city-container .city-name {
@@ -117,6 +118,7 @@
   display: block;
   width: 100%;
   max-height: 22.4vh;
+  height: 40vw;
 }
 
 .guide-wrap .detail-container .theme-item .theme-desc {
@@ -197,6 +199,7 @@
   margin-left: 2%;
   float: left;
   display: block;
+  height: 30.4vw;
 }
 
 .guide-wrap .detail-container .theme-item-path .thumb-wrap img:first-child {
@@ -227,6 +230,7 @@
   max-height: 35.3vh;
   display: block;
   width: 100%;
+  height: 62.66667vw;
 }
 
 .guide-wrap .detail-container .item .title {

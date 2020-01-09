@@ -8,7 +8,7 @@ class Nav extends Component {
 
     componentDidUpdate() {
 
-        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
+        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/') == 8) {
             // console.log(findDOMNode(this.refs.comment));
             findDOMNode(this.refs.comment).style.display = 'none'
         } else {
@@ -18,7 +18,7 @@ class Nav extends Component {
     }
     componentDidMount() {
 
-        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
+        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/') == 8) {
             // console.log(findDOMNode(this.refs.comment));
             findDOMNode(this.refs.comment).style.display = 'none'
         } else {
