@@ -17,7 +17,8 @@ class Meiwu extends Component{
             feiyong:[],
             xuzhi:[],
             rule:[],
-            select:[true,false,false]
+            select:[true,false,false],
+            likelistall:[]
         }
     }
     async componentDidMount(){ 
@@ -36,24 +37,43 @@ class Meiwu extends Component{
           pvFrom,
           shopid
         })
+       
         // console.log(data)
         // console.log(data.result.productThumb)
+        /*
+           https://wapi.feekr.com/shop/product/detail?productId=33654&channel=5e14685e51172f8b2423a6be160a87c6&shopid=FK
+           https://wapi.feekr.com/shop/product/like?productCategoryId=272&count=4&shopid=FK
+
+
+          https://wapi.feekr.com/shop/product/detail?productId=37758&channel=48312&pvFrom=feekr_faxian_tehui&shopid=FK
+          https://wapi.feekr.com/shop/product/like?productCategoryId=8388608&count=4&shopid=FK
+        */
         
         let datalist=data.data.result
+        let productCategoryId=datalist.productCategory
+        let count='4'
+         //获取猜你喜欢数据
+        let likelist =await Goodlist.getlike({
+          productCategoryId,
+          count,
+          shopid
+        })
+        let likelistall=likelist.data.result.list
+        // console.log(likelistall)
         let feiyong=datalist.productContain.split('【').slice(1)
         // console.log(feiyong)
         let img=data.data.result.productThumb
         let xuzhi=datalist.usage.split('；')
         let rule=datalist.usage.split('；')
-        console.log(xuzhi)
+        // console.log(xuzhi)
         // console.log(datalist)
         this.setState({
           datalist,
           img,
           feiyong,
           xuzhi,
-          rule
-          
+          rule,
+          likelistall
         })
       }else{
         let data =await Goodlist.get({
@@ -62,6 +82,18 @@ class Meiwu extends Component{
           shopid
         })
         let datalist=data.data.result
+ 
+        let productCategoryId=datalist.productCategory
+        let count='4'
+        //获取猜你喜欢数据
+        let likelist =await Goodlist.getlike({
+          productCategoryId,
+          count,
+          shopid
+        })
+        
+        let likelistall=likelist.data.result.list
+        // console.log(likelistall)
         let feiyong=datalist.productContain.split('【').slice(1)
         // console.log(feiyong)
         let img=data.data.result.productThumb
@@ -74,7 +106,8 @@ class Meiwu extends Component{
           img,
           feiyong,
           xuzhi,
-          rule
+          rule,
+          likelistall
         })
       }
     }
@@ -93,8 +126,14 @@ class Meiwu extends Component{
         })
       }
     }
+    changeMenu2=(cur)=>{
+      // console.log(this.props)
+      // this.props.history.push('/'+cur)
+      this.props.history.go('/'+cur)
+      // https://wapi.feekr.com/shop/product/detail?productId=35865&pvFrom=wap_product_like&shopid=FK
+    }
     render(){
-      let {datalist,img,feiyong,xuzhi,rule,select}=this.state
+      let {datalist,img,feiyong,xuzhi,rule,select,likelistall}=this.state
       
         return <div className="xiangqing">
             
@@ -116,11 +155,11 @@ class Meiwu extends Component{
           <section className="product-guide"><img src={datalist.head} alt={datalist.user}/> <p>{`旅游体验师 - ${datalist.user}`} </p> <h4>为你推荐</h4> <h5>{datalist.recom} </h5></section>
           <ul className="product-detail-tab">
             <li onClick={this.change.bind(this,'1')} style={select[0]?{color: 'rgb(26, 188, 156)',
-    borderBottomColor: 'rgb(26, 188, 156)'}:null}>费用包含</li> 
+              borderBottomColor: 'rgb(26, 188, 156)'}:null}>费用包含</li> 
             <li onClick={this.change.bind(this,'2')} style={select[1]?{color: 'rgb(26, 188, 156)',
-    borderBottomColor: 'rgb(26, 188, 156)'}:null}>产品详情</li> 
+              borderBottomColor: 'rgb(26, 188, 156)'}:null}>产品详情</li> 
             <li onClick={this.change.bind(this,'3')} style={select[2]?{color: 'rgb(26, 188, 156)',
-    borderBottomColor: 'rgb(26, 188, 156)'}:null}>购买须知</li> 
+              borderBottomColor: 'rgb(26, 188, 156)'}:null}>购买须知</li> 
           </ul>
          <section className="product-detail-desc">
          <div className="product-detail-contain" style={select[0]?{display:'block'}:{display:'none'}}>
@@ -163,7 +202,20 @@ class Meiwu extends Component{
           <div className="recommend">
             <p className="product-detail-guess-title">猜你喜欢</p>
             <ul className="recommend-goods">
+              {
+                likelistall.map(item => {
+                  return <li key={item.productId}>
+                      <div  className="common-goods recommend-item"onClick={this.changeMenu2.bind(this,`xiangqing/${item.productId}`)} key={item.productId} >
+                        <img src={item.productCover} className="common-goods-img lazyloaded" /> 
+                        <h3 className="common-goods-content one-line-ellipsis">{item.productName} </h3>
+                        <p className="common-goods-price" >
+                          <span className="common-goods-num">{`¥ ${item.productPrice}  `}</span>起
+                          <span className="common-goods-unit"><span className="common-goods-bold">{`/${item.productUnitCount}`}</span>{item.productUnit} </span></p>
+                      </div>
+                    </li>
+              })
               
+              }
             </ul>
           </div>
         </div>
