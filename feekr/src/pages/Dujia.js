@@ -6,6 +6,9 @@ import Search from '../components/search';
 
 import { Carousel } from 'antd';
 
+import 'antd/dist/antd.css'
+
+
 import '../utils/base.css'
 import '../utils/icon.css'
 import '../css/Dujia.css';
@@ -104,10 +107,6 @@ class Dujia extends Component {
     render() {
         let { navlist, num } = this.state;
         return <div className="Dujia">
-            {/* <Switch>
-                <Route path="/navsearch" component={NavSearch} />
-            </Switch> */}
-            <Search />
             <Carousel autoplay>
                 <div className="banner">
                     <img src="https://banner01.feekr.com/2020/01/02/0454155e0dafb7aed57.jpg!750X360" />

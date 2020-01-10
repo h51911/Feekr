@@ -100,11 +100,8 @@
   color: #000;
 }
 
-.nav-search-main .search-select-box .search-select-sub-box {
-  display: flex;
-}
-
 .nav-search-main .search-select-box .search-select-sub-box .search-select-sub {
+  float: left;
   width: 30%;
   height: 92.50667vw;
   background-color: #f6f6f6;
@@ -117,7 +114,7 @@
 }
 
 .nav-search-main .search-select-box .search-select-sub-box .search-select-sub-detail {
-  flex-grow: 1;
+  width: 70%;
 }
 
 .nav-search-main .search-select-box .search-select-sub-box .common-scroll-y {

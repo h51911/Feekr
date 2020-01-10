@@ -6,26 +6,26 @@ import { findDOMNode } from 'react-dom'
 import '../css/Nav.scss'
 class Nav extends Component {
 
-    componentDidUpdate() {
+    // componentDidUpdate() {
 
-        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
-            // console.log(findDOMNode(this.refs.comment));
-            findDOMNode(this.refs.comment).style.display = 'none'
-        } else {
-            findDOMNode(this.refs.comment).style.display = 'block'
-        }
+    //     if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
+    //         // console.log(findDOMNode(this.refs.comment));
+    //         findDOMNode(this.refs.comment).style.display = 'none'
+    //     } else {
+    //         findDOMNode(this.refs.comment).style.display = 'block'
+    //     }
 
-    }
-    componentDidMount() {
+    // }
+    // componentDidMount() {
 
-        if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
-            // console.log(findDOMNode(this.refs.comment));
-            findDOMNode(this.refs.comment).style.display = 'none'
-        } else {
-            findDOMNode(this.refs.comment).style.display = 'block'
-        }
+    //     if (this.props.path == '/login' || this.props.path == '/reg' || this.props.path == '/forget' || this.props.path.indexOf('/guide/')) {
+    //         // console.log(findDOMNode(this.refs.comment));
+    //         findDOMNode(this.refs.comment).style.display = 'none'
+    //     } else {
+    //         findDOMNode(this.refs.comment).style.display = 'block'
+    //     }
 
-    }
+    // }
     render() {
 
         // console.log('nav', this.props.path.indexOf('/guide/'))
