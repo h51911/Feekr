@@ -86,7 +86,6 @@ class Home extends Component {
 
         if(pvFrom1.length==2){
             let pvFrom=pvFrom1[1].split('=')[1]
-
             let head={
                 productId,
                 channel,

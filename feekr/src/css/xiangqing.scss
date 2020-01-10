@@ -198,12 +198,32 @@
             li{
                 width: 49%;
                 text-align: center;
-                a{
+                .common-goods{
                     display: block;
                     margin-bottom: .6875rem;
+                    cursor: pointer;
                     img{
-                        width: 100%;
+                        width: 10.6875rem;
+                        height: 6.6875rem;
                         vertical-align: middle;
+                    }
+                    .common-goods-content{
+                        margin-top: .375rem;
+                        font-size: .6875rem;
+                        color: #888;
+                        font-weight: normal;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .common-goods-price{
+                        color: rgb(26, 188, 156);
+                        font-size: .75rem;
+                        line-height: 1.375rem;
+                        .common-goods-num{
+                            font-size: .8125rem;
+                            font-weight: bold;
+                        }
                     }
                 }
             }
