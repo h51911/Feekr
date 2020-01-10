@@ -1,12 +1,21 @@
 import axios from 'axios'
 
 const Classify = axios.create({
-    baseURL: 'https://wapi.feekr.com/shop/product/search_item?style[]=0&city[]=&keyword=&shopid=FK'
-    
+    baseURL: 'https://wapi.feekr.com/shop/product/'
+
 })
 
-export const get = async (params, config = {}) => {
-    let data = await Classify.get('', {
+export const gets = async (params, config = {}) => {
+    let data = await Classify.get('search_item', {
+        ...config,
+        params
+    })
+
+    return data;
+}
+
+export const datas = async (params, config = {}) => {
+    let data = await Classify.get('search', {
         ...config,
         params
     })
@@ -15,5 +24,6 @@ export const get = async (params, config = {}) => {
 }
 
 export default {
-    get
+    gets,
+    datas
 }
