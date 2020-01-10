@@ -79,32 +79,29 @@ class Home extends Component {
         // console.log(cur.bb)
         let headata=cur.bb.split('product/')
         let productId=cur.aa.split('/')[1]
-        // console.log(productId)
+
         let channel=headata[1].split('?')[0].split('/')[1]
-        // console.log(channel)
+
         let pvFrom1=headata[1].split('?')
-        // console.log(pvFrom1)
+
         if(pvFrom1.length==2){
             let pvFrom=pvFrom1[1].split('=')[1]
-            // console.log(pvFrom)
+
             let head={
                 productId,
                 channel,
                 pvFrom,
-                shopid:'FK'
+              
             }
-            this.props.history.push({ pathname: cur.aa, state: head })
+            this.props.history.push({ pathname: cur.aa+'/'+channel+'/'+pvFrom+'/'+'FK', state: head })
         }else{
             let head={
                 productId,
                 channel,
-                shopid:'FK'
+                
             }
-            this.props.history.push({ pathname: cur.aa, state: head })
-        }
-       
-        // console.log(headata[1])
-       
+            this.props.history.push({ pathname: cur.aa+'/'+channel+'/'+'FK', state: head })
+        }  
     }
     async componentDidMount() {
         let res = await Zixun.get({

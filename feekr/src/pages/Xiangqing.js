@@ -12,15 +12,20 @@ class Meiwu extends Component{
         this.state={
             dots:false,
             datalist:{},
-            img:[]
+            img:[],
+            feiyong:[]
         }
     }
     async componentDidMount(){ 
-      let {productId} =this.props.location.state
-      let {channel}=this.props.location.state
-      let {shopid}=this.props.location.state
-      if(this.props.location.state.pvFrom){
-        let {pvFrom}=this.props.location.state
+      // console.log(this.props.location.pathname.split('/').length)
+      let productId =this.props.location.pathname.split('/')[2]
+      // console.log(productId)
+      let channel=this.props.location.pathname.split('/')[3]
+        // console.log(channel)
+      let shopid='FK'
+     
+      if(this.props.location.pathname.split('/').length==6){
+        let pvFrom=this.props.location.pathname.split('/')[4]
         let data =await Goodlist.get({
           productId,
           channel,
@@ -29,12 +34,16 @@ class Meiwu extends Component{
         })
         // console.log(data)
         // console.log(data.result.productThumb)
+        
         let datalist=data.data.result
+        let feiyong=datalist.productContain.split('【')
+        console.log(feiyong)
         let img=data.data.result.productThumb
         // console.log(datalist)
         this.setState({
           datalist,
-          img
+          img,
+          feiyong
         })
       }else{
         let data =await Goodlist.get({
@@ -43,17 +52,21 @@ class Meiwu extends Component{
           shopid
         })
         let datalist=data.data.result
+        let feiyong=datalist.productContain.split('【').slice(1)
+        console.log(feiyong)
         let img=data.data.result.productThumb
         // console.log(datalist)
         this.setState({
           datalist,
-          img
+          img,
+          feiyong
         })
       }
    
     }
     render(){
-      let {datalist,img}=this.state
+      let {datalist,img,feiyong}=this.state
+      
         return <div className="xiangqing">
             
       
@@ -71,9 +84,28 @@ class Meiwu extends Component{
             <p className="product-detail-price" ><b>{`￥${datalist.productPrice}`} </b><span> 起/晚</span></p>
           </div>
           <div className="product-detail-menu"><span>选择套餐/有效期</span> <i className="iconfont icon-jiantou"></i></div>
-        
-       
+          <section className="product-guide"><img src=""alt=""/> <p>{`旅游体验师 - ${datalist.user}`} </p> <h4>为你推荐</h4> <h5>{datalist.recom} </h5></section>
+          <ul className="product-detail-tab">
+            <li>费用包含</li> 
+            <li>产品详情</li> 
+            <li>购买须知</li> 
+          </ul>
+         <section className="product-detail-desc">
+         <div className="product-detail-contain">
+          {
+            feiyong.map(item => {
+              return <p>
+                {`【${item}`}
+              </p>
+          })
+          }
+         </div>
+         {/* <section class="product-detail-desc">
+
+         </section> */}
+         </section>
         </div>
+       
     }
 }
 
