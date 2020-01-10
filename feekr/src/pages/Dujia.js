@@ -12,7 +12,6 @@ import '../css/Dujia.css';
 
 import Like from '../api/Like';
 import Weixin from '../components/Weixin';
-import NavSearch from './NavSearch';
 
 class Dujia extends Component {
 
@@ -63,14 +62,12 @@ class Dujia extends Component {
             ],
             num: [],
         }
+        this.changeMenu = this.changeMenu.bind(this);
     }
 
     changeMenu(cur) {
         // console.log(cur)
         this.props.history.push(cur)
-        this.setState({
-            selectedKeys: [this.props.history.location.pathname]
-        })
     }
 
     async componentDidMount() {
@@ -134,14 +131,10 @@ class Dujia extends Component {
                     <img src="https://banner01.feekr.com/2019/12/25/0523235e032a8b79c85.jpg!750X360" />
                 </div>
             </Carousel> ,
-            {/* <Carousel className="autoplay">
-                <img src="https://banner01.feekr.com/2020/01/02/0454155e0dafb7aed57.jpg!750X360" />
-                <img src="https://banner01.feekr.com/2020/01/02/0454155e0dafb7aed57.jpg!750X360" />
-            </Carousel> */}
             < ul className="search-nav" >
                 {
                     navlist.map((item, index) => {
-                        return <li className="nav-detail" key={item.nav_id} onClick={this.changeMenu.bind(this)}>
+                        return <li className="nav-detail" key={item.nav_id} onClick={this.changeMenu.bind(this, `navsearch/${item.nav_id}`)}>
                             <img src={item.nav_img} className="nav-icon" />
                             <p className="type">{item.nav_name}</p>
                         </li>

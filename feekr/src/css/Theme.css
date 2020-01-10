@@ -1,0 +1,20 @@
+.guide-theme-list-wrap {
+  background: #fff;
+  min-height: 100vh;
+}
+
+.guide-theme-list-wrap .notice-tab {
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+  color: #A9A9A9;
+}
+
+.guide-theme-list-wrap .notice-tab .tab {
+  padding-left: 4.8vw;
+  padding-right: 4.8vw;
+  font-size: 3.73333vw;
+  color: #000;
+  border-bottom: 1px solid #1abc9c;
+  color: #1abc9c;
+  width: 21%;
+}

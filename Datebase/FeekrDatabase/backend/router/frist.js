@@ -31,7 +31,7 @@ const { formatdata } = require('../utils/formatdata');//获取提示信息格式
 */
 //查询所有商品
 Router.get('/', async (req, res) => {
-    let result = await mongo.find('indexs', req.query);//调用封装好的find方法，查询数据并返回给前端 [{},{},{}]
+    let result = await mongo.find('cityrecommend', req.query);//调用封装好的find方法，查询数据并返回给前端 [{},{},{}]
     if (result.length) {
         //成功
         res.send(formatdata({ data: result }));

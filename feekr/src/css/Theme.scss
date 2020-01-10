@@ -1,0 +1,28 @@
+@function vw($px) {
+    @return ($px/375) * 100vw;
+}
+
+// .ant-tabs-nav .ant-tabs-tab:active {
+    //     color: #1abc9c !important;
+    // }
+
+.guide-theme-list-wrap {
+    background: #fff;
+    min-height: 100vh;
+
+    .notice-tab {
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+        color: #A9A9A9;
+
+        .tab {
+            padding-left: vw(18);
+            padding-right: vw(18);
+            font-size: vw(14);
+            color: #000;
+            border-bottom: 1px solid #1abc9c;
+            color: #1abc9c;
+            width: 21%;
+        }
+    }
+}
