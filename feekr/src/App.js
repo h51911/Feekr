@@ -13,7 +13,7 @@ import Forget from './pages/Forget'
 import User from './pages/User'
 import Exit from './pages/Exit'
 import Xiangqing from './pages/Xiangqing'
-import 'antd/dist/antd.css'
+
 // import './utils/rem'
 import Morenews from './pages/Morenews'
 import Guide from './pages/Guide'

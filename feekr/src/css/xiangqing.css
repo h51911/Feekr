@@ -3,6 +3,10 @@
   margin-bottom: 3.225rem;
 }
 
+.xiangqing ul, .xiangqing p {
+  margin-bottom: 0 !important;
+}
+
 .xiangqing .ant-carousel .slick-slide {
   text-align: center;
   height: 13.1875rem;
@@ -131,11 +135,102 @@
   border-bottom: .125rem solid transparent;
 }
 
-.xiangqing .product-detail-contain {
-  padding: .9375rem .6875rem;
-  background-color: #fff;
+.xiangqing .product-detail-desc {
   font-size: .875rem;
   line-height: 1.875rem;
   color: #3c3c3c;
   word-break: break-all;
+}
+
+.xiangqing .product-detail-desc P {
+  font-size: .875rem !important;
+  line-height: 1.5625rem !important;
+}
+
+.xiangqing .product-detail-desc .product-detail-contain {
+  padding: .9375rem .6875rem;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-desc .buy-notice .buy-notice-head {
+  padding-top: .9375rem;
+  text-indent: .6875rem;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-desc .buy-notice-usage {
+  padding: 0 .6875rem .9375rem;
+  font-size: .875rem;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-desc .buy-notice-usage p {
+  padding-bottom: .625rem;
+}
+
+.xiangqing .product-detail-desc .buy-notice-head-rule {
+  padding-top: .9375rem;
+  margin-top: .5625rem;
+  text-indent: .6875rem;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-desc .buy-notice-rule {
+  padding: 0 .6875rem .9375rem;
+  font-size: .875rem;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-desc .buy-notice-rule p {
+  padding-bottom: .625rem;
+}
+
+.xiangqing .product-detail-wxcs {
+  padding: 0 .8125rem .46875rem;
+  margin-top: .5625rem;
+  background-color: #fff;
+  font-size: .875rem;
+  line-height: 1.5625rem;
+}
+
+.xiangqing .product-detail-wxcs h4 {
+  padding: .625rem 0;
+  text-align: center;
+}
+
+.xiangqing .product-detail-wxcs p {
+  padding-bottom: .625rem;
+}
+
+.xiangqing .product-detail-guess {
+  padding: 0 .8125rem .46875rem;
+  margin-top: .5625rem;
+  background-color: #fff;
+}
+
+.xiangqing .product-detail-guess .recommend .product-detail-guess-title {
+  font-size: .9375rem;
+  line-height: 3.0625rem;
+  text-align: center;
+}
+
+.xiangqing .product-detail-guess .recommend-goods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.xiangqing .product-detail-guess .recommend-goods li {
+  width: 49%;
+  text-align: center;
+}
+
+.xiangqing .product-detail-guess .recommend-goods li a {
+  display: block;
+  margin-bottom: .6875rem;
+}
+
+.xiangqing .product-detail-guess .recommend-goods li a img {
+  width: 100%;
+  vertical-align: middle;
 }

@@ -4,6 +4,10 @@
   font-family: PingFangSC-Light, sans-serif;
 }
 
+.box1 p {
+  margin-bottom: 0 !important;
+}
+
 .nav-container {
   background: #fff;
   padding: .9375rem 0;

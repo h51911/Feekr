@@ -24,7 +24,7 @@ class Morenews extends Component {
     handleScroll = (event) => {
         //滚动条高度
         let scrollTop = document.documentElement.scrollTop;  //滚动条滚动高度
-        console.log(scrollTop)
+        // console.log(scrollTop)
         if (scrollTop == 413) {
             setTimeout(async () => {
                 let res = await Zixun.get({

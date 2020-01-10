@@ -4,7 +4,7 @@
   font-size: .625rem;
 }
 
-.back-title {
+.home-wrap .back-title {
   text-align: center;
   position: relative;
   padding: .625rem;
@@ -12,11 +12,11 @@
   background-color: white;
 }
 
-.back-title span {
+.home-wrap .back-title span {
   visibility: visible;
 }
 
-.back-title .iconfont {
+.home-wrap .back-title .iconfont {
   position: absolute;
   left: .625rem;
   top: 50%;
@@ -25,35 +25,35 @@
   font-size: 2rem;
 }
 
-.news-container {
+.home-wrap .news-container {
   background: #fff;
   margin-top: .0625rem;
   margin-bottom: 3.125rem;
 }
 
-.news-container .list {
+.home-wrap .news-container .list {
   border-top: .0625rem solid #F2F2F2;
   padding: .875rem .6875rem;
   border-bottom: .0625rem solid #F2F2F2;
 }
 
-.news-container .list .flex-wrap {
+.home-wrap .news-container .list .flex-wrap {
   display: flex;
   align-items: center;
   color: #2d2d2d;
 }
 
-.news-container .list .flex-wrap img {
+.home-wrap .news-container .list .flex-wrap img {
   width: 4.5rem;
   height: 4.5rem;
 }
 
-.news-container .list .flex-wrap .news-item {
+.home-wrap .news-container .list .flex-wrap .news-item {
   margin-left: 1.5rem;
   width: 16.0625rem;
 }
 
-.news-container .list .flex-wrap .news-item .news-title {
+.home-wrap .news-container .list .flex-wrap .news-item .news-title {
   margin-bottom: .5rem;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -63,11 +63,11 @@
   font-size: .875rem !important;
 }
 
-.news-container .list .flex-wrap .news-item .p2 .separate {
+.home-wrap .news-container .list .flex-wrap .news-item .p2 .separate {
   padding: 0 .625rem;
 }
 
-.news-container .list .flex-wrap + .flex-wrap {
+.home-wrap .news-container .list .flex-wrap + .flex-wrap {
   border-top: .0625rem solid #F2F2F2;
   margin-top: .6875rem;
   padding-top: .6875rem;
