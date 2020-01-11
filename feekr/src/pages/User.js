@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import '../css/User.scss'
+import { Link } from 'react-router-dom';
+import Nav from '../commom/Nav';
 class User extends Component {
     state={
         text:''
     }
     
     componentDidMount(){
-        console.log(this.props.match.params.id)
+        // console.log(this.props.match.params)
         this.setState({
             text:this.props.match.params.id
         })
@@ -53,13 +55,13 @@ class User extends Component {
         
         <div className="menu-group">
             
-            <a className="user-menu table-mode" href="/user/setting?id=73282">
+            <Link className="user-menu table-mode" to={`/exit/${this.state.text}`}>
                 <div className="table-cell iconfont icon-Set_up txt-right"></div>
                 <div className="table-cell menu-name txt-left">设置
                     
                 </div>
                 <div className="table-cell iconfont icon-right-jiantou"></div>
-            </a>
+            </Link>
             
             <a className="user-menu table-mode" href="/user/feedback?id=73282">
                 <div className="table-cell iconfont icon-fankui txt-right"></div>
@@ -72,6 +74,7 @@ class User extends Component {
         </div>
         </div>
         </div>
+        <Nav path={this.props.location.pathname} />
         </div>
     }
 }

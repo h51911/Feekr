@@ -40,8 +40,8 @@ class Pathdetail extends Component {
                                     })
                                 }
                                 {
-                                    item.path.map((item, inx) => {
-                                        return <p key={inx}><strong>DAY{inx + 1}路线：</strong>逢源双桥－财神湾－江南百床馆－江南木雕陈列馆－茅盾故居</p>
+                                    item.path.map((item, inx, arr) => {
+                                        return <p key={inx}><strong>DAY{inx + 1}路线：</strong>{arr[inx].join(' - ')}</p>
                                     })
                                 }
                             </div>

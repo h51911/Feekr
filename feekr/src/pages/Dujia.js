@@ -13,6 +13,7 @@ import '../css/Dujia.css';
 
 import Like from '../api/Like';
 import Weixin from '../components/Weixin';
+import Nav from '../commom/Nav';
 
 class Dujia extends Component {
 
@@ -326,6 +327,7 @@ class Dujia extends Component {
                 </div>
             </div>
             <Weixin></Weixin>
+            <Nav path={this.props.location.pathname} />
         </div >
     }
 }

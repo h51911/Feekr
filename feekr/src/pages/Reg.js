@@ -52,39 +52,58 @@ class Reg extends Component {
             4.再验证密码正则
             5.发送ajax
         */
-        if (this.state.title.trim()) {//验证手机不为空
+        let user = this.state.title.trim()
+        let pwd = this.state.pwd.trim()
+        if (user) {//验证手机不为空
             // console.log('不为空')
-            if (this.state.pwd.trim()) {//验证密码不为空
+            if (pwd) {//验证密码不为空
                 const reg = /^\d{11}$/;
-                let res = reg.test(this.state.title.trim())//验证手机正则
+                let res = reg.test(user)//验证手机正则
                 if (res) {//手机正则验证通过
                     const regDwd = /^[a-zA-Z0-9]{6,}$/;
-                    let resDwd = regDwd.test(this.state.pwd.trim())//验证密码正则
+                    let resDwd = regDwd.test(pwd)//验证密码正则
                     if (resDwd) {//密码正则通过
                         //发送axios
                         console.log('可以发送了！')
                         // 查询数据库是否存在该用户
                         let { data } = await Axios.get('http://localhost:2020/user/check', {
                             params: {
-                                name: this.state.title.trim()
+                                name: user
                             }
                         })
                         // console.log(data.code)
                         if (data.code) {//1  可以注册
                             let params = qs.stringify({
-                                name: this.state.title.trim(),
-                                password: this.state.pwd.trim()
+                                name: user,
+                                password: pwd
                             })
                             let { data } = await Axios.post(
                                 'http://localhost:2020/user/reg', params
 
                             )
                             console.log(data)
-                            if (data.code) {
-                                console.log(this.props)
-                                //跳转到user
-                                this.props.history.push('/user/' + this.state.title.trim())
-                                //
+                            if (data.code) {//注册成功 直接发送ajax登录 并且获取token 存入本地浏览器 并且跳到用户页
+                                let { data } = await Axios.get('http://localhost:2020/user/login', {
+                                    params: {
+                                        name: user,
+                                        password: pwd,
+                                        keep: true//生成token
+                                    }
+                                })
+                                console.log(data)
+                                if (data.code) {//1  可以登录 
+                                    console.log('yes')
+                                    this.props.history.push('/user/' + user)//跳转到用户页
+                                    //存token在本地
+
+                                    let userToken = {
+                                        user,
+                                        Authorization: data.authorization
+                                    }
+                                    let str = JSON.stringify(userToken);//把对象转为字符串
+                                    localStorage.setItem('authorization', str)//存token在本地
+
+                                }
                             }
                         } else {
                             this.tip('手机号已经被注册')

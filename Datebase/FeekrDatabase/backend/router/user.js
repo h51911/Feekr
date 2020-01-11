@@ -61,8 +61,9 @@ Router.get('/check', async (req, res) => {
 Router.get('/login', async (req, res) => {
     // let { name, password, keep } = req.body;//post用body请求数据
     let { name, password, keep } = req.query;//get用query请求数据
-    console.log(name, password, keep);
+    // console.log(name, password, keep);
     let result = await mongo.find('FeekrUser', { name, password });//调用封装好的find方法，查询数据并返回给前端 [{},{},{}]
+    // console.log(result.length)
     if (result.length) {
         //成功
         //判断是否要生成token：前端想保留7天免登陆的时候
@@ -110,6 +111,21 @@ Router.get('/delete', async (req, res) => {
     // console.log(result.deletedCount);
     if (result.deletedCount) {
         //删除成功
+        res.send(formatdata());
+    } else {
+        //失败
+        res.send(formatdata({ code: 0 }));
+    }
+});
+
+//改密码  
+Router.post('/update', async (req, res) => {
+    let { name, password } = req.body;
+    // console.log({ 'goods_id': goods_id })
+    let result = await mongo.update('FeekrUser', { name }, { $set: { password } });//调用封装好的find方法，查询数据并返回给前端
+    // console.log(result);
+    if (result.modifiedCount) {
+        //改动成功
         res.send(formatdata());
     } else {
         //失败

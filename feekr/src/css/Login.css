@@ -5,6 +5,38 @@
   display: table;
 }
 
+.box .global-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  z-index: 10001;
+  max-width: 80%;
+  visibility: hidden;
+}
+
+.box .global-alert .alert-content {
+  border-radius: 2.66667vw;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 5.33333vw;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all .3s;
+  color: #fff;
+  font-size: 4.26667vw;
+  line-height: 1.4;
+}
+
+.box .global-alert .alert-shows {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.box .alert-show {
+  visibility: visible;
+}
+
 .box .tablecell {
   display: table-cell;
   vertical-align: middle;
@@ -22,6 +54,7 @@
   font-size: 32vw;
   color: #fff;
   padding: 2.66667vw 0 4vw;
+  margin-bottom: 0;
 }
 
 .box .tablecell .login-form {

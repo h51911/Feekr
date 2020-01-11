@@ -6,7 +6,7 @@ import Dujia from './pages/Dujia'
 // import Search from './components/search'
 import Meiwu from './pages/Meiwu'
 import Huwai from './pages/Huwai'
-import Nav from './commom/Nav'
+// import Nav from './commom/Nav'
 import Login from './pages/Login'
 import Reg from './pages/Reg'
 import Forget from './pages/Forget'
@@ -41,7 +41,7 @@ class App extends Component {
                     <Route path="/meiwu" component={Meiwu} />
                     <Route path="/reg" component={Reg} />
                     <Route path="/user/:id" component={User} />
-                    <Route path="/exit" component={Exit} />
+                    <Route path="/exit/:id" component={Exit} />
                     <Route path="/forget" component={Forget} />
                     <Route path="/xiangqing" component={Xiangqing} />
                     <Route path="/yanjiusuo" component={Home} />
@@ -57,6 +57,7 @@ class App extends Component {
                 </Switch>
             </Suspense>
             {/* <Nav path={this.props.location.pathname} /> */}
+
         </div>
     }
 }

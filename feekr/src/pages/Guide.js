@@ -21,11 +21,11 @@ class Guide extends Component {
         this.props.history.push(`/gonglve/guide/theme/${id}/${inx}`)
     }
     gotoPath = (id) => {//点击来到路线推荐
-        console.log(id)
+        // console.log(id)
         this.props.history.push(`/gonglve/guide/pathdetail/${id}`)
     }
     gotoTheme = (id) => {//点击来到主体推荐详情
-        console.log(id)
+        // console.log(id)
         this.props.history.push(`/gonglve/guide/theme_detail/${id}`)
     }
     async getGuide(id) {
@@ -76,6 +76,12 @@ class Guide extends Component {
     gotoCity = (id) => {//点击周边城市 来到guide
         this.props.history.push(`/gonglve/guide/${id}`)
         this.getGuide(id)
+    }
+    changeMenu2 = (cur) => {
+        console.log(cur)
+        this.props.history.push('/' + cur)
+        // this.props.history.go('/' + cur)
+        // https://wapi.feekr.com/shop/product/detail?productId=35865&pvFrom=wap_product_like&shopid=FK
     }
     render() {
         let { detail, guidecategory, themelist, pathlist, articlelist, shoplist, nearby } = this.state
@@ -159,7 +165,7 @@ class Guide extends Component {
                                 </div>
                                 <div className="content"><span className="regular-font">{item.title}</span>
                                     <p>
-                                        路线包括：{`${item.scenic[0]}－${item.scenic[1]}－${item.scenic[2]}－${item.scenic[3]}－${item.scenic[4]}`}
+                                        路线包括：{item.scenic.join('－')}
                                     </p>
                                 </div>
                             </div>
@@ -199,7 +205,7 @@ class Guide extends Component {
 
                         {
                             shoplist.map(item => {
-                                return <div className="item pull-left txt-center" href="https://m.feekr.com/product/37115&amp;pvFrom=faixian_guide_product" data-target="position" key={item.productId}>
+                                return <div className="item pull-left txt-center" onClick={this.changeMenu2.bind(this, `xiangqing/${item.productId}`)} key={item.productId}>
                                     <div className="item-thumb">
                                         <img src={item.cover} style={{ display: "block" }} />
                                     </div>
