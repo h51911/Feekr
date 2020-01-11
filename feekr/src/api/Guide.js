@@ -60,6 +60,23 @@ export const nearby = async (params, config = {}) => {
     })
     return data
 }
+export const themedetail = async (params, config = {}) => {
+    // console.log(params, config)
+    let { data } = await com.get('themedetail', {
+        ...config,
+        params
+    })
+    return data
+}
+export const pathdetail = async (params, config = {}) => {
+    // console.log(params, config)
+    let { data } = await com.get('pathdetail', {
+        ...config,
+        params
+    })
+    return data
+}
+
 
 
 
@@ -70,5 +87,7 @@ export default {
     pathlist,
     articlelist,
     shoplist,
-    nearby
+    nearby,
+    themedetail,
+    pathdetail
 }

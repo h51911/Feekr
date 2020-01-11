@@ -2,22 +2,36 @@ import React, { Component } from 'react';
 import '../css/Guide.scss'
 import Api from '../api/Guide.js'
 class Guide extends Component {
-    state = {
-        detail: [],//头部
-        guidecategory: [],//美食推荐
-        themelist: [],//主体推荐
-        pathlist: [],//路线推荐
-        articlelist: [],//私藏咨询
-        shoplist: [],//玩乐度假
-        nearby: []//周边城市
+    constructor(props) {
+        super(props)
+        this.state = {
+            detail: [],//头部
+            guidecategory: [],//美食推荐
+            themelist: [],//主体推荐
+            pathlist: [],//路线推荐
+            articlelist: [],//私藏咨询
+            shoplist: [],//玩乐度假
+            nearby: [],//周边城市
+            id: this.props.match.params.id
+        }
+
     }
-    goto(id) {
-        console.log(this.props, id)
-        this.props.history.push('/gonglve/guide/theme/' + id)
+    goto(id, inx) {//点击来到主题推荐
+        // console.log(this.props, id)
+        this.props.history.push(`/gonglve/guide/theme/${id}/${inx}`)
     }
-    async componentDidMount() {
+    gotoPath = (id) => {//点击来到路线推荐
+        console.log(id)
+        this.props.history.push(`/gonglve/guide/pathdetail/${id}`)
+    }
+    gotoTheme = (id) => {//点击来到主体推荐详情
+        console.log(id)
+        this.props.history.push(`/gonglve/guide/theme_detail/${id}`)
+    }
+    async getGuide(id) {
         // console.log(this.props.match.params)
-        let { id } = this.props.match.params;
+        // let id = this.state.id;
+        // console.log(id)
         let detail = await Api.detail({
             id,
         })
@@ -56,9 +70,16 @@ class Guide extends Component {
             nearby: nearby.result.list
         })
     }
+    componentDidMount() {//从gonglve来到guide 渲染页面
+        this.getGuide(this.state.id)
+    }
+    gotoCity = (id) => {//点击周边城市 来到guide
+        this.props.history.push(`/gonglve/guide/${id}`)
+        this.getGuide(id)
+    }
     render() {
         let { detail, guidecategory, themelist, pathlist, articlelist, shoplist, nearby } = this.state
-        // console.log(detail, themelist, pathlist, articlelist, shoplist, nearby)
+        // console.log(detail, guidecategory, themelist, pathlist, articlelist, shoplist, nearby)
         let { id } = this.props.match.params;
         return <div>
             <div className="guide-wrap guide-detail-wrap">
@@ -73,7 +94,7 @@ class Guide extends Component {
                     <nav className="table-mode">
                         {
                             guidecategory.map(item => {
-                                return <div className="menu table-cell" data-target="clear" key={item.id} onClick={this.goto.bind(this, id)}>
+                                return <div className="menu table-cell" data-target="clear" key={item.id} onClick={this.goto.bind(this, id, item.id)}>
                                     <p className="cate-icon"><span className={`iconfont ${item.icon}`}></span></p>
                                     <p className="cate-name font-sm"><span className="nav-name">{item.title}</span></p>
                                 </div>
@@ -92,7 +113,9 @@ class Guide extends Component {
                     </header>
                     {
                         themelist.map(item => {
-                            return <div className="theme-item theme-item-city" data-target="position" key={item.id}>
+                            return <div className="theme-item theme-item-city"
+                                onClick={this.gotoTheme.bind(null, item.id)}
+                                key={item.id}>
                                 <div className="thumb-wrap">
                                     <img className="" src={`https://images.weserv.nl/?url=${item.cover}`} style={{ display: "block" }} />
                                 </div>
@@ -111,7 +134,7 @@ class Guide extends Component {
 
 
 
-                    <div href="/guide/theme_list?id=6075&amp;pv_from=guide_view" className="get-more-list" data-target="position">更多主题推荐</div>
+                    <div onClick={this.goto.bind(this, id, 1)} className="get-more-list">更多主题推荐</div>
                 </div>
                 <div className="path-container theme-mode guide-path-list-wrap detail-container">
                     <header className="header-title-wrap txt-center font-lg regular-font">
@@ -122,7 +145,9 @@ class Guide extends Component {
 
                     {
                         pathlist.map(item => {
-                            return <div className="theme-item theme-item-path" href="/guide/path_detail?id=k5Jp&amp;pv_from=guide_view" data-target="position" key={item.id}>
+                            return <div className="theme-item theme-item-path"
+                                onClick={this.gotoPath.bind(null, item.id)}
+                                key={item.id}>
                                 <div className="thumb-wrap clearfix">
                                     {
                                         item.cover.map((item, inx, arr) => {
@@ -206,7 +231,7 @@ class Guide extends Component {
                     <div className="list-wrap flex-wrap">
                         {
                             nearby.map(item => {
-                                return <div className="flex-item" href="/guide/detail?id=6076&amp;pvFrom=faixian_guide_product" key={item.id}>
+                                return <div className="flex-item" onClick={this.gotoCity.bind(null, item.id)} key={item.id}>
                                     <img src={`https://images.weserv.nl/?url=${item.cover}`} style={{ display: "block" }} />
                                     <div className="item-title txt-center font-md">{item.name}</div>
                                     <p className="item-title txt-center font-sm">距离 <strong>{item.distance}</strong> 公里</p>

@@ -4,11 +4,9 @@ import React, { Component } from 'react';
 
 import Search from '../components/search';
 
-import { Carousel } from 'antd';
-
-import 'antd/dist/antd.css'
-
-
+// import { Carousel } from 'antd';
+//按需加载
+import Carousel from 'antd/es/carousel'
 import '../utils/base.css'
 import '../utils/icon.css'
 import '../css/Dujia.css';
