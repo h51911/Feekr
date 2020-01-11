@@ -17,6 +17,10 @@ class Category extends Component {
             list: data.result.list
         })
     }
+    gotoTheme = (id) => {//点击来到主体推荐详情
+        // console.log(this.props)
+        this.props.props.history.push(`/gonglve/guide/theme_detail/${id}`)
+    }
     componentDidMount() {
         this.getdata()
     }
@@ -36,7 +40,9 @@ class Category extends Component {
                 <div className="list-wrap">
                     {
                         this.state.list.map(item => {
-                            return <a className="theme-item theme-item-city" href="/guide/theme_detail?id=lZdx&amp;pv_from=guide_theme" data-target="ajax" key={item.id}>
+                            return <div className="theme-item theme-item-city"
+                                onClick={this.gotoTheme.bind(null, item.id)}
+                                key={item.id}>
                                 <div className="thumb-wrap">
                                     <img src={item.cover} />
                                 </div>
@@ -49,7 +55,7 @@ class Category extends Component {
 
                                 </div>
                                 <div className="cover"></div>
-                            </a>
+                            </div>
 
                         })
                     }

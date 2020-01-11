@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Search from '../components/search'
 import '../css/gl.scss'
 import Api from '../api/Gonglve'
+import Nav from '../commom/Nav';
 class Gonglve extends Component {
     state = {
         cityrecommend: [
@@ -82,6 +83,7 @@ class Gonglve extends Component {
                 }
 
             </section>
+            <Nav path={this.props.location.pathname} />
         </div>
     }
 }

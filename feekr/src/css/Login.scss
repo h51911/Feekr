@@ -8,6 +8,39 @@
     z-index: 4;
     display: table;
 
+    .global-alert {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        z-index: 10001;
+        max-width: 80%;
+        visibility: hidden;
+        // visibility: visible;
+
+        .alert-content {
+            border-radius: vw(10);
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: vw(20);
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all .3s;
+            color: #fff;
+            font-size: vw(16);
+            line-height: 1.4;
+        }
+
+        .alert-shows {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .alert-show {
+        visibility: visible;
+    }
+
     .tablecell {
         display: table-cell;
         vertical-align: middle;
@@ -23,6 +56,7 @@
                 font-size: vw(120);
                 color: #fff;
                 padding: vw(10) 0 vw(15);
+                margin-bottom: 0;
             }
         }
 
