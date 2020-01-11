@@ -9,7 +9,7 @@ import Zixun from '../api/Zixun';
 import Dangjiyouhui from '../api/Dangjiyouhui';
 import Mudidi from '../api/Mudidi.js';
 import Selected from '../api/Selected.js';
-
+import Nav from '../commom/Nav'
 class Home extends Component {
     constructor(props) {
         super(props)
@@ -262,7 +262,7 @@ class Home extends Component {
                       <a className="get-more bota font-md txt-center" href="/column/news">更多栏目推荐</a>
                 </section>
             </div>
-
+            <Nav/>
         </div>
     }
 }

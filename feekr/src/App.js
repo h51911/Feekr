@@ -6,7 +6,7 @@ import Dujia from './pages/Dujia'
 // import Search from './components/search'
 import Meiwu from './pages/Meiwu'
 import Huwai from './pages/Huwai'
-import Nav from './commom/Nav'
+
 import Login from './pages/Login'
 import Reg from './pages/Reg'
 import Forget from './pages/Forget'
