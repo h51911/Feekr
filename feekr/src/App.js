@@ -56,7 +56,7 @@ class App extends Component {
                     <Redirect from="/" to="/home" exact />
                 </Switch>
             </Suspense>
-            <Nav path={this.props.location.pathname} />
+            {/* <Nav path={this.props.location.pathname} /> */}
         </div>
     }
 }
