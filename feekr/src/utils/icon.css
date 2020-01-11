@@ -91,6 +91,10 @@
     content: "\e66f";
 }
 
+.icon-shuruzhengque:before {
+    content: "\e664";
+  }
+
 .icon-guanbi:before {
     content: "\e60b";
 }

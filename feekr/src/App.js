@@ -18,6 +18,7 @@ import Morenews from './pages/Morenews'
 import Guide from './pages/Guide'
 import NavSearch from './pages/NavSearch'
 import Theme from './pages/Theme'
+
 class App extends Component {
     render() {
         // console.log('app', this.props)
@@ -44,7 +45,7 @@ class App extends Component {
                 <Route path="/navsearch" component={NavSearch} />
                 <Redirect from="/" to="/home" exact />
             </Switch>
-            <Nav path={this.props.location.pathname} />
+            
         </div>
     }
 }

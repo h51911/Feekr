@@ -76,11 +76,11 @@ class Search extends Component {
         }
     }
     Changetitle(event) {
-        if (event.target.value.trim()) {
+        // console.log(event)
             this.setState({
                 title: event.target.value.trim()
             })
-        }
+        
     }
     componentDidMount() {
         let data = localStorage.getItem('search')
