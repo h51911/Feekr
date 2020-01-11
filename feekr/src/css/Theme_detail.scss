@@ -1,0 +1,84 @@
+@function vw($px) {
+    @return ($px/375) * 100vw;
+}
+
+.guide-detail-container {
+    background: #fff;
+    color: #3e3e3e;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+
+    .header {
+        font-size: 18px;
+        position: relative;
+
+        p {
+            margin: 0;
+            padding: 0;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                display: block;
+                height: vw(250);
+            }
+        }
+
+        .title {
+            font-size: vw(16);
+            padding: vw(15);
+            text-align: center;
+        }
+    }
+
+    .content {
+        line-height: 2;
+        padding-top: 0;
+        padding-bottom: vw(20);
+        padding-left: vw(15);
+        padding-right: vw(15);
+
+        .bd-head {
+            p {
+                font-size: vw(14);
+            }
+        }
+
+        .bd-article {
+            .section {
+                margin-top: vw(15);
+                font-size: vw(14);
+
+                .title {
+                    padding: vw(5) 0;
+                    margin-bottom: vw(5);
+                    border-bottom: .5px solid #d5d5d5;
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                .pic {
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                        display: block;
+                        margin: vw(5) 0;
+                    }
+                }
+
+                .tip {
+                    p {
+                        font-size: vw(12);
+                        color: #7f7f7f;
+                    }
+                }
+            }
+        }
+
+        .foot {
+            padding-top: vw(12);
+            font-size: 14px;
+        }
+    }
+}

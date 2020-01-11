@@ -3,8 +3,8 @@
 }
 
 // .ant-tabs-nav .ant-tabs-tab:active {
-    //     color: #1abc9c !important;
-    // }
+//     color: #1abc9c !important;
+// }
 
 .guide-theme-list-wrap {
     background: #fff;
@@ -16,13 +16,85 @@
         color: #A9A9A9;
 
         .tab {
-            padding-left: vw(18);
-            padding-right: vw(18);
+
+            position: relative;
+            font-size: vw(16);
+            color: #A9A9A9;
+            padding: vw(15) vw(20);
+            display: inline-block;
+            // padding-left: vw(18);
+            // padding-right: vw(18);
             font-size: vw(14);
             color: #000;
-            border-bottom: 1px solid #1abc9c;
+        }
+
+        .cur {
             color: #1abc9c;
-            width: 21%;
+            border-bottom: 1px solid #1abc9c;
+        }
+    }
+
+    .body-space {
+        padding: vw(10);
+
+        .list-wrap {
+            .theme-item {
+                position: relative;
+                padding: 0;
+                min-height: 100px;
+                display: block;
+                border-bottom: 1px solid #e5e5e5;
+                margin: vw(10) 0;
+
+                .thumb-wrap {
+                    overflow: hidden;
+                    width: 100%;
+                    margin-bottom: .5rem;
+                    margin: 0;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: vw(150);
+                    }
+                }
+
+                .theme-desc {
+                    position: absolute;
+                    color: #fff;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    width: 80%;
+                    z-index: 2;
+                    text-align: center;
+
+                    .content {
+                        line-height: 150%;
+                        font-size: vw(12);
+                        color: #333;
+                        color: #fff;
+                        font-size: vw(16);
+                        font-weight: bold;
+                    }
+
+                    .style-tag {
+                        color: #999;
+                        font-size: vw(10);
+                        margin-top: vw(10);
+                        color: #fff;
+
+                        span {
+                            padding: vw(5);
+                            font-family: PingFangSC-Regular, Helvetica, "Droid Sans", Arial, sans-serif !important;
+                            font-size: vw(14) !important;
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -30,8 +30,8 @@ class Gonglve extends Component {
         })
     }
     render() {
-        console.log(this.state.cityrecommend)
-        console.log(this.props.match.path)
+        // console.log(this.state.cityrecommend)
+        // console.log(this.props.match.path)
         let { cityrecommendImg, cityrecommend, citylist } = this.state
         return <div id='gonglve'>
             <Search />
