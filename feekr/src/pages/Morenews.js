@@ -25,7 +25,7 @@ class Morenews extends Component {
         //滚动条高度
         let scrollTop = document.documentElement.scrollTop;  //滚动条滚动高度
         // console.log(scrollTop)
-        if (scrollTop == 413) {
+        if (scrollTop === 413) {
             setTimeout(async () => {
                 let res = await Zixun.get({
                     page: 2,
@@ -37,7 +37,7 @@ class Morenews extends Component {
                     menu: this.state.menu.concat(data),
                 })
             }, 500);
-        } else if (scrollTop == 1390) {
+        } else if (scrollTop === 1390) {
 
             setTimeout(async () => {
                 let res = await Zixun.get({
@@ -50,7 +50,7 @@ class Morenews extends Component {
                     menu: this.state.menu.concat(data),
                 })
             }, 500);
-        } else if (scrollTop == 2370) {
+        } else if (scrollTop === 2370) {
 
             setTimeout(async () => {
                 let res = await Zixun.get({
