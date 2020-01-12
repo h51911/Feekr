@@ -22,17 +22,7 @@ export const datas = async (params, config = {}) => {
     return data;
 }
 
-export const nums = async (params, config = {}) => {
-    let data = await Classify.get('search', {
-        ...config,
-        params,
-    })
-
-    return data;
-}
-
 export default {
     gets,
     datas,
-    nums
 }
