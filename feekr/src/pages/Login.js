@@ -42,18 +42,20 @@ class Login extends Component {
                         keep: true//生成token
                     }
                 })
-                console.log(data)
+                // console.log(data)
                 if (data.code) {//1  可以登录 
-                    console.log('yes')
-                    this.props.history.push('/user/' + user)//跳转到用户页
+                    // console.log('yes')
                     //存token在本地
-
                     let userToken = {
                         user,
                         Authorization: data.authorization
                     }
                     let str = JSON.stringify(userToken);//把对象转为字符串
                     localStorage.setItem('authorization', str)//存token在本地
+                    this.props.history.push('/user/' + user)//跳转到用户页
+
+
+
 
                 } else {
                     this.tip('用户名或密码错误！')

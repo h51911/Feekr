@@ -7,13 +7,17 @@ class Exit extends Component {
         localStorage.removeItem('authorization')
         this.props.history.push(id)
     }
+    gotouser = (id) => {//点击返回 按钮 来到user
+
+        this.props.history.push(id)
+    }
     render() {
         // console.log(this.props)
         return <div className='exit'>
             <div className="inner-wrap">
                 <header className="back-title user-header">
                     <span>设置</span>
-                    <div className="iconfont icon-fanhui" onClick={this.gotoback.bind(null, `/user/${this.props.match.params.id}`)}></div>
+                    <div className="iconfont icon-fanhui" onClick={this.gotouser.bind(null, `/user/${this.props.match.params.id}`)}></div>
                 </header>
                 <div className="menu">
 
