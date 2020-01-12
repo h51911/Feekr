@@ -24,15 +24,15 @@ class Meiwu extends Component {
       sty: true,
       disp: 'block',
       aa: [],
-      sect:[]
+      sect: []
     }
     this.changeNum1 = this.changeNum1.bind(this)
     this.changeNum = this.changeNum.bind(this)
   }
   async componentDidMount() {
-    
+
     let productId = this.props.location.pathname.split('/')[2]
-    
+
     let channel = this.props.location.pathname.split('/')[3]
     // console.log(channel)
     let shopid = 'FK'
@@ -63,15 +63,15 @@ class Meiwu extends Component {
       let xuzhi = datalist.usage.split('；')
       let rule = datalist.usage.split('；')
       let aa = []
-      
+
       group.map(item => {
         return aa.push(1)
       })
-      let sect=[]
-      group.map((item,idx) => {
-        if(idx==0){
+      let sect = []
+      group.map((item, idx) => {
+        if (idx == 0) {
           sect.push(true)
-        }else{
+        } else {
           sect.push(false)
         }
         return sect
@@ -114,11 +114,11 @@ class Meiwu extends Component {
       let xuzhi = datalist.usage.split('；')
       let rule = datalist.usage.split('；')
       let aa = []
-      let sect=[]
-      group.map((item,idx) => {
-        if(idx==0){
+      let sect = []
+      group.map((item, idx) => {
+        if (idx == 0) {
           sect.push(true)
-        }else{
+        } else {
           sect.push(false)
         }
         return sect
@@ -217,10 +217,10 @@ class Meiwu extends Component {
     let bb = aa.map((item, index) => {
       if (index == idx) {
         item++;
-        if(item>=buyMax){
-          item=buyMax
+        if (item >= buyMax) {
+          item = buyMax
           cc.push(item)
-        }else{
+        } else {
           cc.push(item)
         }
       } else {
@@ -273,27 +273,27 @@ class Meiwu extends Component {
       })
     }
   }
-  sellt=(idx)=>{
+  sellt = (idx) => {
     console.log(111)
     let aa = this.state.sect
-      // console.log(aa)
-      let cc = [];
-      let bb = aa.map((item, index) => {
-        if (idx == index) {
-          item = !item
-          cc.push(item)
-        } else {
-          item=item
-          cc.push(item)
-        }
-        return cc
-      })
-      this.setState({
-        sect: cc
-      })
+    // console.log(aa)
+    let cc = [];
+    let bb = aa.map((item, index) => {
+      if (idx == index) {
+        item = !item
+        cc.push(item)
+      } else {
+        item = item
+        cc.push(item)
+      }
+      return cc
+    })
+    this.setState({
+      sect: cc
+    })
   }
   render() {
-    let { datalist, img, feiyong, xuzhi, rule, select, likelistall, group, aa,sect } = this.state
+    let { datalist, img, feiyong, xuzhi, rule, select, likelistall, group, aa, sect } = this.state
     // console.log(sect)
     return <div className="xiangqing">
       <div className="main" >
@@ -406,14 +406,14 @@ class Meiwu extends Component {
                 return <li className="combo-item" key={item.groupId}>
                   <div className="suite">
                     <ul className="suite-flex suite-pick">
-                      <li className="suite-select" onClick={this.sellt.bind(this,idx)}><i className="iconfont icon-shuruzhengque"  style={sect[idx]?{display:'block'}:{display:'none'}}></i></li>
+                      <li className="suite-select" onClick={this.sellt.bind(this, idx)}><i className="iconfont icon-shuruzhengque" style={sect[idx] ? { display: 'block' } : { display: 'none' }}></i></li>
                       <li className="suite-name">{item.groupName}
                       </li>
                       <li className="flex-shrink suite-price">
                         <p className={item.buyMax}><b>{`￥ ${item.groupPrice}`} </b></p>
                       </li>
                     </ul>
-                    <div style={sect[idx]?{display:'block'}:{display:'none'}}>
+                    <div style={sect[idx] ? { display: 'block' } : { display: 'none' }}>
                       <ul className="suite-flex suite-count" >
                         <li className="suite-count-text">购买数量:</li>
                         <li className="disable" onClick={this.low.bind(this, idx)} ref={(ele) => this.title = ele}>-</li>
