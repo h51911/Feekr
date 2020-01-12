@@ -25,8 +25,8 @@ class NavSearch extends Component {
             num2: [],
             num3: [],
             num4: [],
-            currentIndex: 0,
-            currentInde2: 0,
+            currentIndex: '',
+            currentInde2: '',
             style: str,
             scrollY: 0,
             dataname: '分类',
@@ -45,26 +45,33 @@ class NavSearch extends Component {
     }
     changedata(idx) {
         let { name, id } = idx;
+        let currentInde2 = name;
+        let currentIndex = '';
+        let display2 = 'none';
+        this.setState({
+            currentIndex,
+            currentInde2,
+            display2
+        });
         let style = id;
         // console.log(name)
         let dataname = name;
         // let url = 'navsearch/id'
         this.props.history.push(`${style}`);
-
         this.setState({
             style,
             dataname,
+            display2: 'block'
         });
-        if (this.state.style == this.props.match.params.id * 1) {
-            let currentInde2 = 1;
-            this.setState({
-                currentInde2
-            });
-        }
-        // console.log(this.state.style, this.props.match.params.id * 1)
     }
     changename(idx) {
         let { id, name } = idx;
+        let currentInde2 = name;
+        let currentIndex = 2;
+        this.setState({
+            currentIndex,
+            currentInde2
+        });
         let citys = id;
         // console.log(idx);
         // console.log(name, id)
@@ -75,10 +82,17 @@ class NavSearch extends Component {
         this.setState({
             citys,
             dataname2,
+            display3: 'none'
         });
     }
     changesort(idx) {
         let { name, id } = idx;
+        let currentInde2 = name;
+        let currentIndex = 3;
+        this.setState({
+            currentIndex,
+            currentInde2
+        });
         let sort = id;
         // console.log(name, id)
         let dataname3 = name;
@@ -86,7 +100,8 @@ class NavSearch extends Component {
         this.props.history.go(`${sort}`);
         this.setState({
             sort,
-            dataname3
+            dataname3,
+            display4: 'none'
         });
     }
     async componentDidMount() {
@@ -251,11 +266,7 @@ class NavSearch extends Component {
         }
     }
 
-    changelist(id) {
-        // this.setState({
-        //     isok: !isok
-        // })
-        // console.log(id)
+    changelist() {
         this.state.isok = !this.state.isok;
         this.state.isok2 = false;
         this.state.isok3 = false;
@@ -265,18 +276,19 @@ class NavSearch extends Component {
                 display3: 'none',
                 display4: 'none',
             })
-            this.state.currentIndex = id
+            this.state.currentIndex = 1
+            this.state.currentInde2 = 6
         } else {
             this.setState({
                 display2: 'none',
                 display3: 'none',
                 display4: 'none',
             })
-            this.state.currentIndex = 0
+            this.state.currentIndex = 5
         }
         // console.log(this.state.currentIndex)
     }
-    changelists(id) {
+    changelists() {
         // this.setState({
         //     isok: !isok
         // })
@@ -289,17 +301,17 @@ class NavSearch extends Component {
                 display2: 'none',
                 display4: 'none'
             })
-            this.state.currentIndex = id
+            this.state.currentIndex = 2
         } else {
             this.setState({
                 display2: 'none',
                 display3: 'none',
                 display4: 'none'
             })
-            this.state.currentIndex = 0
+            this.state.currentIndex = ''
         }
     }
-    changelistsx(id) {
+    changelistsx() {
         // this.setState({
         //     isok: !isok
         // })
@@ -313,14 +325,14 @@ class NavSearch extends Component {
                 display2: 'none',
                 display3: 'none',
             })
-            this.state.currentIndex = id
+            this.state.currentIndex = 3
         } else {
             this.setState({
                 display2: 'none',
                 display3: 'none',
                 display4: 'none'
             })
-            this.state.currentIndex = 0
+            this.state.currentIndex = ''
         }
     }
     additem() {
@@ -357,20 +369,20 @@ class NavSearch extends Component {
                                     {this.state.dataname}
                                     <i className="iconfont icon-arrowup"></i>
                                 </button>
-                                <button className="search-select-items" onClick={this.changelists.bind(this, '2')}>{this.state.dataname2}
+                                <button className={this.state.currentIndex == 2 ? 'active' : 'search-select-items'} onClick={this.changelists.bind(this, '2')}>{this.state.dataname2}
                                     <i className="iconfont icon-arrowup"></i>
                                 </button>
-                                <button className="search-select-items search-select-no-border" onClick={this.changelistsx.bind(this, '3')}>{this.state.dataname3}
+                                <button className={this.state.currentIndex == 3 ? 'active' : 'search-select-items search-select-no-border'} onClick={this.changelistsx.bind(this, '3')}>{this.state.dataname3}
                                     <i className="iconfont icon-arrowup"></i>
                                 </button>
                             </div>
                             <ul className="search-select-detail search-select-more common-scroll-y" style={{ display: this.state.display2 }}>
-                                <li onClick={this.changedata.bind(this, { id: 4194304, name: '全部分类' })} className={this.state.currentIndex == 1 ? 'active2' : 'search-select-label base-color'}  >
+                                <li onClick={this.changedata.bind(this, { id: 4194304, name: '全部分类' })} className={this.state.currentInde2 == 6 ? 'active2' : 'search-select-label base-color'}  >
                                     全部分类
                             </li>
                                 {
                                     num.map((item, index) => {
-                                        return <li className={this.state.currentInde2 == 1 ? 'active2' : 'search-select-label base-color'} key={item.id} onClick={this.changedata.bind(this, { id: item.id, name: item.name })}>
+                                        return <li className={this.state.currentInde2 == item.name ? 'active2' : 'search-select-label base-color'} key={item.id} onClick={this.changedata.bind(this, { id: item.id, name: item.name })}>
                                             {item.name}
                                         </li>
                                     })
@@ -379,7 +391,7 @@ class NavSearch extends Component {
                             <ul className="search-select-detail search-select-more common-scroll-y" style={{ display: this.state.display4 }}  >
                                 {
                                     num3.map(item => {
-                                        return <li className="search-select-label" key={item.id} onClick={this.changesort.bind(this, { id: item.id, name: item.name })}>
+                                        return <li className={this.state.currentInde2 == item.name ? 'active2' : 'search-select-label'} key={item.id} onClick={this.changesort.bind(this, { id: item.id, name: item.name })}>
                                             {item.name}
                                         </li>
                                     })
@@ -400,7 +412,7 @@ class NavSearch extends Component {
                                 <ul className="search-select-sub-detail search-select-more common-scroll-y">
                                     {
                                         num2.map(item => {
-                                            return <li className="search-select-label search-select-sub-label" key={item.id} onClick={this.changename.bind(this, { id: item.id, name: item.city })}>
+                                            return <li className={this.state.currentInde2 == item.city ? 'active2' : 'search-select-label search-select-sub-label'} key={item.id} onClick={this.changename.bind(this, { id: item.id, name: item.city })}>
                                                 {item.city}
                                                 < span className="search-select-area">({item.area})</span>
                                             </li>

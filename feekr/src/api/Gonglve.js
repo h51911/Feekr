@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import qs from 'qs'
 const com = axios.create({
-    baseURL: 'http://localhost:2020/'
+    baseURL: 'http://10.3.140.151:2020/'
 });
 
 export const citylist = async (params, config = {}) => {
