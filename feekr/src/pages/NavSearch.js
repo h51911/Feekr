@@ -8,7 +8,10 @@ import Classify from '../api/Classify';
 class NavSearch extends Component {
     constructor(props) {
         super(props);
-
+        // console.log(this.props)
+        let str = this.props.match.params.id
+        // console.log(str)
+        // console.log(ste)
         this.state = {
             title: '',
             display: 'none',
@@ -21,27 +24,97 @@ class NavSearch extends Component {
             num: [],
             num2: [],
             num3: [],
-            num4: []
+            num4: [],
+            currentIndex: 0,
+            currentInde2: 0,
+            style: str,
+            scrollY: 0,
+            dataname: '分类',
+            citys: '',
+            dataname2: '目的地',
+            sort: '',
+            dataname3: '排序',
         }
-
+        // console.log(this.state.page)
         this.changeTitle = this.changeTitle.bind(this);
         this.additem = this.additem.bind(this);
         this.changelist = this.changelist.bind(this);
         this.changelists = this.changelists.bind(this);
         this.changelistsx = this.changelistsx.bind(this);
+        this.changedata = this.changedata.bind(this);
     }
+    changedata(idx) {
+        let { name, id } = idx;
+        let style = id;
+        // console.log(name)
+        let dataname = name;
+        // let url = 'navsearch/id'
+        this.props.history.push(`${style}`);
 
+        this.setState({
+            style,
+            dataname,
+        });
+        if (this.state.style == this.props.match.params.id * 1) {
+            let currentInde2 = 1;
+            this.setState({
+                currentInde2
+            });
+        }
+        // console.log(this.state.style, this.props.match.params.id * 1)
+    }
+    changename(idx) {
+        let { id, name } = idx;
+        let citys = id;
+        // console.log(idx);
+        // console.log(name, id)
+        let dataname2 = name;
+        // let style = this.state.style;
+        this.props.history.go(`${citys}`);
+        // console.log(dataname2)
+        this.setState({
+            citys,
+            dataname2,
+        });
+    }
+    changesort(idx) {
+        let { name, id } = idx;
+        let sort = id;
+        // console.log(name, id)
+        let dataname3 = name;
+        // let sort = this.state.sort;
+        this.props.history.go(`${sort}`);
+        this.setState({
+            sort,
+            dataname3
+        });
+    }
     async componentDidMount() {
+
+        window.addEventListener('scroll', this.handleScroll);
         let res = await Classify.gets({
             shopid: 'FK'
         })
-        // console.log(res);
 
         let res2 = await Classify.datas({
+            style: this.state.style,
             page: 1,
-            shopid: 'FK'
+            shopid: 'FK',
+            city: this.state.citys,
+            // sort: this.state.sort
         })
         // console.log(res2);
+        let wite = res.data.result.style;
+        // console.log(wite);
+        wite.forEach(item => {
+            if (item.id == this.state.style) {
+                this.setState({
+                    dataname: item.name
+                })
+            }
+            // console.log(item.id);
+            // console.log(this.state.style)
+        });
         let data = res.data.result.style;
         let data2 = res.data.result.city;
         let data3 = res.data.result.sort;
@@ -55,29 +128,85 @@ class NavSearch extends Component {
             num4: list
         })
         // console.log(this.state);
-        window.addEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll = (event) => {
+    async componentDidUpdate(prsa, afscfas) {
+        // console.log(this.state.style);
+        if (this.state.style != afscfas.style) {
+            // console.log(666)
+            let res2 = await Classify.datas({
+                style: this.state.style,
+                page: 1,
+                shopid: 'FK',
+                city: this.state.citys,
+                sort: ''
+            })
+            let list = res2.data.result.list;
+            let style = this.state.style;
+            this.setState({
+                num4: list,
+                style,
+            })
+        }
+        if (this.state.citys != afscfas.citys) {
+            // console.log(666)
+            let res2 = await Classify.datas({
+                style: this.state.style,
+                page: 1,
+                shopid: 'FK',
+                city: this.state.citys,
+                sort: ''
+            })
+            // console.log(252);
+            let list = res2.data.result.list;
+            let style = this.state.style;
+            this.setState({
+                num4: list,
+                style,
+            })
+        }
+        if (this.state.sort != afscfas.sort) {
+            let res2 = await Classify.datas({
+                style: this.state.style,
+                page: 1,
+                shopid: 'FK',
+                city: this.state.city,
+                sort: this.state.sort
+            })
+            // console.log(252);
+            let list = res2.data.result.list;
+            let style = this.state.style;
+            this.setState({
+                num4: list,
+                style,
+            })
+        }
+    }
+
+    handleScroll = () => {
         //滚动条高度
         let scrollTop = document.documentElement.scrollTop;  //滚动条滚动高度
-        console.log(scrollTop);
-        if (scrollTop == 5000) {
+        this.state.scrollY = scrollTop;
+        // console.log(scrollTop);
+        if (scrollTop === 6023) {
+            // console.log(scrollTop);
             setTimeout(async () => {
                 let res2 = await Classify.datas({
+                    style: this.state.style,
                     page: 2,
                     shopid: 'FK'
                 })
                 let list = res2.data.result.list;
-                console.log(list)
                 this.setState({
                     num4: this.state.num4.concat(list),
                 })
-            }, 500);
-        } else if (scrollTop == 10000) {
-
+            }, 100);
+        }
+        else if (scrollTop === 12422) {
+            // console.log(scrollTop);
             setTimeout(async () => {
                 let res2 = await Classify.datas({
+                    style: this.state.style,
                     page: 3,
                     shopid: 'FK'
                 })
@@ -86,11 +215,13 @@ class NavSearch extends Component {
                 this.setState({
                     num4: this.state.num4.concat(list),
                 })
-            }, 500);
-        } else if (scrollTop == 15000) {
-
+            }, 100);
+        }
+        else if (scrollTop === 18515) {
+            // console.log(scrollTop);
             setTimeout(async () => {
                 let res2 = await Classify.datas({
+                    style: this.state.style,
                     page: 4,
                     shopid: 'FK'
                 })
@@ -99,7 +230,7 @@ class NavSearch extends Component {
                 this.setState({
                     num4: this.state.num4.concat(list),
                 })
-            }, 500);
+            }, 100);
         }
     }
 
@@ -120,10 +251,11 @@ class NavSearch extends Component {
         }
     }
 
-    changelist() {
+    changelist(id) {
         // this.setState({
         //     isok: !isok
         // })
+        // console.log(id)
         this.state.isok = !this.state.isok;
         this.state.isok2 = false;
         this.state.isok3 = false;
@@ -133,15 +265,18 @@ class NavSearch extends Component {
                 display3: 'none',
                 display4: 'none',
             })
+            this.state.currentIndex = id
         } else {
             this.setState({
                 display2: 'none',
                 display3: 'none',
                 display4: 'none',
             })
+            this.state.currentIndex = 0
         }
+        // console.log(this.state.currentIndex)
     }
-    changelists() {
+    changelists(id) {
         // this.setState({
         //     isok: !isok
         // })
@@ -154,19 +289,21 @@ class NavSearch extends Component {
                 display2: 'none',
                 display4: 'none'
             })
+            this.state.currentIndex = id
         } else {
             this.setState({
                 display2: 'none',
                 display3: 'none',
                 display4: 'none'
             })
+            this.state.currentIndex = 0
         }
     }
-    changelistsx() {
+    changelistsx(id) {
         // this.setState({
         //     isok: !isok
         // })
-        console.log(33333)
+        // console.log(33333)
         this.state.isok3 = !this.state.isok3;
         this.state.isok = false;
         this.state.isok2 = false;
@@ -176,12 +313,14 @@ class NavSearch extends Component {
                 display2: 'none',
                 display3: 'none',
             })
+            this.state.currentIndex = id
         } else {
             this.setState({
                 display2: 'none',
                 display3: 'none',
                 display4: 'none'
             })
+            this.state.currentIndex = 0
         }
     }
     additem() {
@@ -195,7 +334,8 @@ class NavSearch extends Component {
     }
     render() {
         let { num, num2, num3, num4 } = this.state;
-
+        // console.log(this.state.currentInde2);
+        // console.log(this.state.citys);
         return <>
             <div onScroll={this.handleScroll}>
                 <div className="nav-search-main">
@@ -213,55 +353,56 @@ class NavSearch extends Component {
                         </form>
                         <section className="search-select-box">
                             <div className="search-select-options">
-                                <button className="search-select-items" onClick={this.changelist}>分类
-                                <i className="iconfont icon-arrowup"></i>
+                                <button className={this.state.currentIndex == 1 ? 'active' : 'search-select-items'} onClick={this.changelist.bind(this, '1')}>
+                                    {this.state.dataname}
+                                    <i className="iconfont icon-arrowup"></i>
                                 </button>
-                                <button className="search-select-items" onClick={this.changelists}>目的地
-                                <i className="iconfont icon-arrowup"></i>
+                                <button className="search-select-items" onClick={this.changelists.bind(this, '2')}>{this.state.dataname2}
+                                    <i className="iconfont icon-arrowup"></i>
                                 </button>
-                                <button className="search-select-items search-select-no-border" onClick={this.changelistsx}>排序
-                                <i className="iconfont icon-arrowup"></i>
+                                <button className="search-select-items search-select-no-border" onClick={this.changelistsx.bind(this, '3')}>{this.state.dataname3}
+                                    <i className="iconfont icon-arrowup"></i>
                                 </button>
                             </div>
                             <ul className="search-select-detail search-select-more common-scroll-y" style={{ display: this.state.display2 }}>
-                                <li className="search-select-label base-color">
+                                <li onClick={this.changedata.bind(this, { id: 4194304, name: '全部分类' })} className={this.state.currentIndex == 1 ? 'active2' : 'search-select-label base-color'}  >
                                     全部分类
                             </li>
                                 {
-                                    num.map(item => {
-                                        return <li className="search-select-label" key={item.id}>
+                                    num.map((item, index) => {
+                                        return <li className={this.state.currentInde2 == 1 ? 'active2' : 'search-select-label base-color'} key={item.id} onClick={this.changedata.bind(this, { id: item.id, name: item.name })}>
                                             {item.name}
                                         </li>
                                     })
                                 }
                             </ul>
-                            <ul className="search-select-detail search-select-more common-scroll-y" style={{ display: this.state.display4 }}>
+                            <ul className="search-select-detail search-select-more common-scroll-y" style={{ display: this.state.display4 }}  >
                                 {
                                     num3.map(item => {
-                                        return <li className="search-select-label" key={item.id}>
+                                        return <li className="search-select-label" key={item.id} onClick={this.changesort.bind(this, { id: item.id, name: item.name })}>
                                             {item.name}
                                         </li>
                                     })
                                 }
                             </ul>
                             <div className="search-select-detail search-select-sub-box" style={{ display: this.state.display3 }}>
-                                <ul className="search-select-sub">
-                                    <li className="search-select-label base-color">
+                                {/* <ul className="search-select-sub">
+                                    <li className={this.state.currentIndex == 2 ? 'active2' : 'search-select-label base-color'}>
                                         全部
                                 </li>
-                                    <li className="search-select-label">
+                                    <li className={this.state.currentIndex == 2 ? 'active2' : 'search-select-label'}>
                                         国内
                                 </li>
-                                    <li className="search-select-label">
+                                    <li className={this.state.currentIndex == 2 ? 'active2' : 'search-select-label'}>
                                         国外
                                 </li>
-                                </ul>
+                                </ul> */}
                                 <ul className="search-select-sub-detail search-select-more common-scroll-y">
                                     {
                                         num2.map(item => {
-                                            return <li className="search-select-label search-select-sub-label" key={item.id}>
+                                            return <li className="search-select-label search-select-sub-label" key={item.id} onClick={this.changename.bind(this, { id: item.id, name: item.city })}>
                                                 {item.city}
-                                                <span className="search-select-area"> ({item.area})</span>
+                                                < span className="search-select-area">({item.area})</span>
                                             </li>
                                         })
                                     }
@@ -279,7 +420,7 @@ class NavSearch extends Component {
                                                 <img src={item.productCover} className=" lazyloaded" />
                                                 <h3>{item.productDesc}</h3>
                                                 <h4>{item.productName}</h4>
-                                                <span>{item.productPrice}</span>
+                                                <span>￥{item.productPrice}</span>
                                             </a>
                                         </li>
                                     })

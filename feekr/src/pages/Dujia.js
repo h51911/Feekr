@@ -22,44 +22,39 @@ class Dujia extends Component {
 
         this.state = {
             navlist: [{
-                nav_id: "1",
+                nav_id: "4194304",
                 nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-guonei-n.png",
                 nav_name: "国内酒店"
             },
             {
-                nav_id: "2",
+                nav_id: "16",
                 nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-guowai-n.png ",
                 nav_name: "海外酒店"
             },
             {
-                nav_id: "3",
+                nav_id: "256",
                 nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-pingpai-n.png ",
                 nav_name: "品牌酒店"
             },
             {
-                nav_id: "4",
+                nav_id: "1",
                 nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-wanle-n.png",
                 nav_name: "玩乐体验"
             },
             {
-                nav_id: "5",
+                nav_id: "1048576",
                 nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-zhoubian-n.png",
                 nav_name: "周边游"
             },
             {
-                nav_id: "6",
+                nav_id: "131072",
                 nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-xiaotuan-n.png",
                 nav_name: "精品小团"
             },
             {
-                nav_id: "7",
+                nav_id: "2097152",
                 nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-sijia-n.png",
                 nav_name: "私家定制"
-            },
-            {
-                nav_id: "8",
-                nav_img: "https://res01.feekr.com/ecommerce/minapp/banner/icon-gonglv-n.png",
-                nav_name: "攻略推荐"
             },
             ],
             num: [],
@@ -68,7 +63,7 @@ class Dujia extends Component {
     }
 
     changeMenu(cur) {
-        // console.log(cur)
+        console.log(cur)
         this.props.history.push(cur)
     }
 
@@ -106,6 +101,7 @@ class Dujia extends Component {
     render() {
         let { navlist, num } = this.state;
         return <div className="Dujia">
+            <Search />
             <Carousel autoplay>
                 <div className="banner">
                     <img src="https://banner01.feekr.com/2020/01/02/0454155e0dafb7aed57.jpg!750X360" />
@@ -138,6 +134,10 @@ class Dujia extends Component {
                         </li>
                     })
                 }
+                <li className="nav-detail" onClick={this.changeMenu.bind(this, `home`)}>
+                    <img src='https://res01.feekr.com/ecommerce/minapp/banner/icon-gonglv-n.png' className="nav-icon" />
+                    <p className="type">攻略推荐</p>
+                </li>
             </ul >
             <div className="home-hot home-common-base">
                 <div className="common-search-entry">

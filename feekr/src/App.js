@@ -52,7 +52,7 @@ class App extends Component {
                     <Route path="/gonglve/guide/theme_detail/:id" component={Theme_detail} />
                     <Route path="/gonglve/guide/:id" component={Guide} />
                     <Route path="/gonglve/guide/theme/:id/:id" component={Category} />
-                    <Route path="/navsearch" component={NavSearch} />
+                    <Route path="/navsearch/:id" component={NavSearch} />
                     <Redirect from="/" to="/home" exact />
                 </Switch>
             </Suspense>
