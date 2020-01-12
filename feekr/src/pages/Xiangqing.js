@@ -24,13 +24,16 @@ class Meiwu extends Component {
       sty: true,
       disp: 'block',
       aa: [],
-      sect: []
+      sect: [],
+      low: true,
+      flex: false,
+      allprice: 0
     }
     this.changeNum1 = this.changeNum1.bind(this)
     this.changeNum = this.changeNum.bind(this)
   }
   async componentDidMount() {
-
+    window.addEventListener('scroll', this.handleScroll);
     let productId = this.props.location.pathname.split('/')[2]
 
     let channel = this.props.location.pathname.split('/')[3]
@@ -76,7 +79,8 @@ class Meiwu extends Component {
         }
         return sect
       })
-      // console.log(aa)
+      // console.log(group)
+      let allprice = group[0].groupPrice
       this.setState({
         datalist,
         img,
@@ -86,7 +90,8 @@ class Meiwu extends Component {
         likelistall,
         group,
         aa,
-        sect
+        sect,
+        allprice
       })
     } else {
       let data = await Goodlist.get({
@@ -126,8 +131,8 @@ class Meiwu extends Component {
       group.map(item => {
         return aa.push(1)
       })
-      // console.log(Num)
-      // console.log(xuzhi)
+      // console.log(group)
+      let allprice = group[0].groupPrice
       this.setState({
         datalist,
         img,
@@ -137,7 +142,8 @@ class Meiwu extends Component {
         likelistall,
         group,
         aa,
-        sect
+        sect,
+        allprice
       })
     }
   }
@@ -169,11 +175,13 @@ class Meiwu extends Component {
       setTimeout(() => {
         this.setState({
           disp: 'none'
+
         })
       }, 500);
     } else {
       this.setState({
         disp: 'block'
+
       })
     }
   }
@@ -213,10 +221,13 @@ class Meiwu extends Component {
   add = (obj) => {
     let { idx, buyMax } = obj
     let cc = [];
-    let aa = this.state.aa
+    let { aa, group, sect } = this.state
     let bb = aa.map((item, index) => {
       if (index == idx) {
         item++;
+        this.setState({
+          low: false
+        })
         if (item >= buyMax) {
           item = buyMax
           cc.push(item)
@@ -228,21 +239,36 @@ class Meiwu extends Component {
       }
       return cc
     })
+    let price = 0
+    // console.log(cc)
+    for (let i = 0; i < sect.length; i++) {
+      if (sect[i]) {
+        price = price + group[i].groupPrice * cc[i]
+      }
+    }
     this.setState({
-      aa: cc
+      aa: cc,
+      allprice: price
     })
   }
   low = (idx) => {
     let cc = [];
-    let aa = this.state.aa
+    let { aa, group, sect } = this.state
+
     let bb = aa.map((item, index) => {
       if (index == idx) {
         item--
         if (item <= 1) {
           item = 1
           cc.push(item)
+          this.setState({
+            low: true
+          })
         } else {
           cc.push(item)
+          this.setState({
+            low: false
+          })
         }
 
       } else {
@@ -250,13 +276,26 @@ class Meiwu extends Component {
       }
       return cc
     })
+    // let pic=0
+    // group.map((item,idx)=>{
+    //   return pic+=item.groupPrice*cc[idx]
+    // })
+    let price = 0
+    console.log(sect)
+    for (let i = 0; i < sect.length; i++) {
+      if (sect[i]) {
+        price = price + group[i].groupPrice * aa[i]
+      }
+    }
     this.setState({
-      aa: cc
+      aa: cc,
+      allprice: price
     })
   }
   changeNum(idx, event) {
+    let { aa, group, sect } = this.state
     if (this.state.aa[idx] == '') {
-      let aa = this.state.aa
+
       // console.log(aa)
       let cc = [];
       let bb = aa.map((item, index) => {
@@ -268,17 +307,20 @@ class Meiwu extends Component {
         }
         return cc
       })
+
       this.setState({
-        aa: cc
+        aa: cc,
+        // allprice:price
       })
+
     }
   }
   sellt = (idx) => {
-    console.log(111)
-    let aa = this.state.sect
-    // console.log(aa)
+    // console.log(111)
+    let { sect, group, aa } = this.state
+    console.log(aa)
     let cc = [];
-    let bb = aa.map((item, index) => {
+    let bb = sect.map((item, index) => {
       if (idx == index) {
         item = !item
         cc.push(item)
@@ -288,16 +330,43 @@ class Meiwu extends Component {
       }
       return cc
     })
+    let price = 0
+
+    for (let i = 0; i < cc.length; i++) {
+      if (cc[i]) {
+        price = price + group[i].groupPrice * aa[i]
+      }
+    }
+
     this.setState({
-      sect: cc
+      sect: cc,
+      allprice: price
     })
   }
+  goHome = () => {
+    this.props.history.push('/home')
+  }
+  handleScroll = (event) => {
+    //滚动条高度
+    let scrollTop = document.documentElement.scrollTop;  //滚动条滚动高度
+    // console.log(scrollTop)
+    if (scrollTop >= 680) {
+      this.setState({
+        flex: true
+      })
+    } else {
+      this.setState({
+        flex: false
+      })
+    }
+
+  }
   render() {
-    let { datalist, img, feiyong, xuzhi, rule, select, likelistall, group, aa, sect } = this.state
+    let { datalist, img, feiyong, xuzhi, rule, select, likelistall, group, aa, sect, low, flex, allprice } = this.state
     // console.log(sect)
-    return <div className="xiangqing">
-      <div className="main" >
-        <div style={this.state.sty ? { display: this.state.disp } : { display: this.state.disp }}>
+    return <div className="xiangqing" onScroll={this.handleScroll}>
+      <div className="main" style={this.state.sty ? { display: this.state.disp } : { display: this.state.disp }} >
+        <div >
           <Carousel dots={this.state.dots}>
             {
               img.map(item => {
@@ -313,7 +382,7 @@ class Meiwu extends Component {
           </div>
           <div className="product-detail-menu" onClick={this.menu}><span>选择套餐/有效期</span> <i className="iconfont icon-jiantou"></i></div>
           <section className="product-guide"><img src={datalist.head} alt={datalist.user} /> <p>{`旅游体验师 - ${datalist.user}`} </p> <h4>为你推荐</h4> <h5>{datalist.recom} </h5></section>
-          <ul className="product-detail-tab">
+          <ul className="product-detail-tab" style={flex ? { position: 'fixed', top: '0', left: '0', marginTop: 0, width: '100%' } : null}>
             <li onClick={this.change.bind(this, '1')} style={select[0] ? {
               color: 'rgb(26, 188, 156)',
               borderBottomColor: 'rgb(26, 188, 156)'
@@ -337,8 +406,7 @@ class Meiwu extends Component {
                 })
               }
             </div>
-            <div id="detailPanelDesc" className="detail-panel-desc" style={select[1] ? { display: 'block' } : { display: 'none' }} >
-              {datalist.productDetail}
+            <div id="detailPanelDesc" className="detail-panel-desc" style={select[1] ? { display: 'block' } : { display: 'none' }} dangerouslySetInnerHTML={{ __html: datalist.productDetail }} >
             </div>
             <div className="buy-notice" style={select[2] ? { display: 'block' } : { display: 'none' }} >
               <p className="buy-notice-head"><b>使用说明 </b></p>
@@ -389,9 +457,9 @@ class Meiwu extends Component {
 
         <footer className="product-footer common-layout-fix" >
           <ul className="product-footer-nav">
-            <li><div className="product-footer-home"><i className="iconfont icon-shouye-shouye"></i><p>首页</p></div></li>
+            <li><div className="product-footer-home" onClick={this.goHome} ><i className="iconfont icon-shouye-shouye"></i><p>首页</p></div></li>
             <li className="product-footer-dot"><i className="iconfont icon-cust"></i><p>客服</p></li> <li><i className="iconfont icon-star01"></i> <p>收藏</p></li>
-            <li className="product-footer-buy product-footer-heavy" >立即预订</li>
+            <li className="product-footer-buy product-footer-heavy" onClick={this.menu} >立即预订</li>
           </ul>
         </footer>
       </div>
@@ -405,8 +473,8 @@ class Meiwu extends Component {
               group.map((item, idx) => {
                 return <li className="combo-item" key={item.groupId}>
                   <div className="suite">
-                    <ul className="suite-flex suite-pick">
-                      <li className="suite-select" onClick={this.sellt.bind(this, idx)}><i className="iconfont icon-shuruzhengque" style={sect[idx] ? { display: 'block' } : { display: 'none' }}></i></li>
+                    <ul className="suite-flex suite-pick" onClick={this.sellt.bind(this, idx)}>
+                      <li className="suite-select"><i className="iconfont icon-shuruzhengque" style={sect[idx] ? { display: 'block' } : { display: 'none' }}></i></li>
                       <li className="suite-name">{item.groupName}
                       </li>
                       <li className="flex-shrink suite-price">
@@ -416,7 +484,7 @@ class Meiwu extends Component {
                     <div style={sect[idx] ? { display: 'block' } : { display: 'none' }}>
                       <ul className="suite-flex suite-count" >
                         <li className="suite-count-text">购买数量:</li>
-                        <li className="disable" onClick={this.low.bind(this, idx)} ref={(ele) => this.title = ele}>-</li>
+                        <li className={low ? "disable" : ''} onClick={this.low.bind(this, idx)} ref={(ele) => this.title = ele}>-</li>
                         <li><input type="text" value={aa[idx]} ref={(ele) => this.title = ele} onChange={this.changeNum1.bind(this, { idx, buyMax: item.buyMax })} onBlur={this.changeNum.bind(this, idx)} className="suite-input" /></li>
                         <li className="" onClick={this.add.bind(this, { idx, buyMax: item.buyMax })} ref={(ele) => this.title = ele}>+</li>
                       </ul>
@@ -430,6 +498,7 @@ class Meiwu extends Component {
 
 
           </ul>
+          <footer className="pipe-confirm common-layout-fix" ><div className="price-wrap"><span className="base-color font-16">{`￥ ${allprice}`} </span></div> <button className="base-bg">下一步，填写信息</button></footer>
         </div>
 
       </section>

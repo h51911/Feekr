@@ -260,7 +260,6 @@
 
 .xiangqing .common-mask {
   z-index: 2000;
-  height: 93%;
   background-color: rgba(0, 0, 0, 0.3);
   color: black;
   position: fixed;
@@ -411,6 +410,42 @@
   font-size: .6875rem;
   line-height: 1.375rem;
   background-color: #f6f6f6;
+}
+
+.xiangqing .pipe-confirm {
+  border-top-color: #1abc9c;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  height: 2.9375rem;
+  border-top-style: solid;
+  border-top-width: .0625rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.xiangqing .pipe-confirm .price-wrap {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.xiangqing .pipe-confirm .price-wrap span {
+  font-size: 1rem;
+}
+
+.xiangqing .pipe-confirm .base-bg {
+  font-size: .9375rem;
+  font-weight: bold;
+  line-height: 2.9375rem;
+  color: #fff;
+  background-color: #1abc9c;
+  width: 50%;
 }
 
 .xiangqing .product-footer {

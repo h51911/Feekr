@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import '../utils/base.css'
-import '../utils/icon.css'
+import '../utils/icon2.css'
 import '../css/Home.css'
 import Search from '../components/search'
 import Title from '../components/Title'
@@ -72,12 +72,9 @@ class Home extends Component {
         this.changeMenu2 = this.changeMenu2.bind(this)
     }
     changeMenu(cur) {
-        // console.log(cur)
-        // console.log(cur.bb)
         this.props.history.push(cur)
     }
     changeMenu2(cur) {
-        // console.log(cur.bb)
         let headata=cur.bb.split('product/')
         let productId=cur.aa.split('/')[1]
 
@@ -260,7 +257,7 @@ class Home extends Component {
                             })
                         }
                       
-                      <a className="get-more bota font-md txt-center" href="/column/news">更多栏目推荐</a>
+                      <div className="get-more bota font-md txt-center"  >更多栏目推荐</div>
                 </section>
             </div>
             <Nav path={this.props.location.pathname} />
