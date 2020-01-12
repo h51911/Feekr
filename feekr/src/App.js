@@ -41,7 +41,7 @@ class App extends Component {
                 {/* 动态路由，嵌套路由 */}
                 <Route path="/gonglve/guide/theme/:id" component={Theme} />
                 <Route path="/gonglve/guide/:id" component={Guide} />
-                <Route path="/navsearch" component={NavSearch} />
+                <Route path="/navsearch/:id" component={NavSearch} />
                 <Redirect from="/" to="/home" exact />
             </Switch>
             <Nav path={this.props.location.pathname} />

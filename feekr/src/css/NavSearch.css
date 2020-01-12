@@ -5,6 +5,36 @@
   font-family: PingFangSC-Regular,Source Han Sans,Helvetica,Droid Sans,Arial,sans-serif;
 }
 
+.nav-search-main .active {
+  color: #1abc9c !important;
+  width: 33%;
+  font-size: 2.93333vw;
+  line-height: 4.26667vw;
+  text-align: center;
+  border-right: .5px solid #e6e6e6;
+  background: #fff;
+}
+
+.nav-search-main .active2 {
+  color: #1abc9c !important;
+  padding-left: 4.66667vw;
+  line-height: 9.46667vw;
+  font-size: 3.46667vw;
+  background-color: #fff;
+  border-bottom: .5px solid #e6e6e6;
+  color: #000;
+}
+
+.nav-search-main .active3 {
+  color: #1abc9c !important;
+  padding-left: 4.66667vw;
+  line-height: 9.46667vw;
+  font-size: 3.46667vw;
+  background-color: #fff;
+  border-bottom: .5px solid #e6e6e6;
+  color: #000;
+}
+
 .nav-search-main .iconfont {
   font-family: "iconfont" !important;
   font-style: normal;
@@ -114,7 +144,7 @@
 }
 
 .nav-search-main .search-select-box .search-select-sub-box .search-select-sub-detail {
-  width: 70%;
+  width: 100%;
 }
 
 .nav-search-main .search-select-box .search-select-sub-box .common-scroll-y {
